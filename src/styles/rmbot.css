@@ -1,17 +1,18 @@
-.navbar{
+.botnavbar{
     height: 70px;
     width: 100vw;
     background: rgba(0,0,0,1);
     margin:0;
     padding:0;
 }
+#rm
 
-.navbar img.logo{
+.botnavbar img .botlogo{
     height:70px;
     padding-left: 20px;
 }
 
-.title{
+.bottitle{
     padding-left: 320px;
 }
 #chatbox {
@@ -19,23 +20,23 @@
   }
 
   
-.navbar ul li{
+.botnavbar ul li{
    
     margin-right: 20px;
     display: inline-block;
 }
 
-.navbar ul li a {
+.botnavbar ul li a {
     color: white; /* Change the color to white or a color that suits your design */
     font-family: Arial, sans-serif;
     text-decoration: none;
 }
 
-/* Add this CSS to adjust the hover color of the navbar text */
-.navbar ul li a:hover {
+/* Add this CSS to adjust the hover color of the.botnavbar text */
+.botnavbar ul li a:hover {
     color: #ff5722; /* Change the hover color to your desired color */
 }
-body {
+.rmbot2 {
     animation: gradientAnimation 10s linear infinite alternate;
     background-size: 400% 400%;
     background-image: linear-gradient(45deg, #ff6b6b, #88f6f6, #b0e57c, #ff6b6b);
@@ -53,7 +54,7 @@ body {
     }
   }
 
-.navbar ul {
+.botnavbar ul {
     list-style: none;
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
@@ -61,7 +62,7 @@ body {
 }
 
 
-.custom-card {
+.bot-card {
     margin-bottom: 100px; /* Adjust top margin to move the card */
     background: rgba(0, 0, 0, 0.1); /* Semi-transparent black background color */
     padding-top: 30px;
@@ -69,13 +70,13 @@ body {
 }
 
 /* CSS to center the card */
-.custom-card-center {
+.bot-card-center {
     width: 95%; /* Adjust the card width as needed */
     margin: 0 auto; /* Center horizontally */
     margin-top: 140px; /* Add top margin for spacing */
 }
 
-#rmbot{
+.rmbot2{
     margin-left: 340px;
 
     width: 150px;
@@ -83,7 +84,7 @@ body {
 }
 
 
-.button img.logo{
+.botbutton img.logo{
     
     height: 30px;
   

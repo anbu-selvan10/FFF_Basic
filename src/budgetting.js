@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/budgetting.css';
-import logo from './img/logofff2.jpg'
+import logofff from './img/logofff2.jpg'
 import enter from './img/enter.png'
 import car from './img/car.png'
 import education from './img/education.png'
@@ -9,24 +9,43 @@ import house from './img/house.png'
 import savings from './img/savings.png'
 import medical from './img/medical2.png'
 import clothes from './img/clothes.png'
-
+import { useNavigate } from 'react-router-dom';
 
 
 function Budget(){
+    let navigate = useNavigate();
 
+    const onH = () => {
+      navigate("/");
+      
+    }
+
+    const onD = () => {
+      navigate("/dtracker");
+    }
+
+    const onR = () => {
+      navigate("/bot");
+    }
     return(
 
     
-        <div>
+        <div className='budget'>
         <nav className="navbar navbar-expand-lg">
-        <img className="logo" src={logo} id="imgcoins" />
+        <img className="logo" src={logofff} id="imgcoins" />
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>Home</b></a>
+              <a className="nav-link" onClick={onH} href="#"><b>Home</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>Daily Tracker</b></a>
+              <a className="nav-link" href="#"><b>Budgeting</b></a>
+            </li>
+            <li className="nav-item">
+              <a onClick={onD} className="nav-link" href="#"><b>Daily Tracker</b></a>
+            </li>
+            <li className="nav-item">
+              <a onClick={onR} className="nav-link" href="#"><b>RM Bot</b></a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#"><b>RM COINS:</b></a>
@@ -42,7 +61,7 @@ function Budget(){
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-12">
-            <div className="card custom-card custom-card-center">
+            <div className="card budget-card budget-card-center">
               <div className="card-body">
                 <div className="fade-in-once">
                   <label><h2 id="yourearnings"><b>Your Earnings</b></h2></label>
@@ -59,7 +78,7 @@ function Budget(){
 
       <div className="row justify-content-center">
         <div className="col-lg-3 col-md-4 entertainment">
-          <div className="card custom-card custom-card-center entertainment">
+          <div className="card budget-card budget-card-center entertainment">
             <div className="card-body">
               <div className="fade-in-once">
                 <img src={enter} className="logo" id="enter" title="rm coins" />
@@ -73,7 +92,7 @@ function Budget(){
       
 
       <div className="col-lg-3 col-md-4 entertainment">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <div className="movies">
@@ -95,7 +114,7 @@ function Budget(){
       </div>
 
       <div className="col-lg-3 col-md-4 food">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <img src={food} className="logo" id="food" title="rm coins" />
@@ -108,7 +127,7 @@ function Budget(){
       </div>
 
       <div className="col-lg-3 col-md-4 food">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <div className="food categories">
@@ -132,7 +151,7 @@ function Budget(){
 
       <div className="row justify-content-center medical">
         <div className="col-lg-3 col-md-4">
-          <div className="card custom-card custom-card-center">
+          <div className="card budget-card budget-card-center">
             <div className="card-body">
               <div className="fade-in-once">
                 <img src={medical} className="logo" id="enter" title="rm coins" />
@@ -146,7 +165,7 @@ function Budget(){
       
 
       <div className="col-lg-3 col-md-4 medical">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <div className="medical">
@@ -168,7 +187,7 @@ function Budget(){
       </div>
 
       <div className="col-lg-3 col-md-4 clothing">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <img src={clothes} className="logo" id="enter" title="rm coins" />
@@ -181,7 +200,7 @@ function Budget(){
       </div>
 
       <div className="col-lg-3 col-md-4 clothing">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <div className="clothes">
@@ -205,7 +224,7 @@ function Budget(){
 
       <div className="row justify-content-center">
         <div className="col-lg-3 col-md-4 travel">
-          <div className="card custom-card custom-card-center">
+          <div className="card budget-card budget-card-center">
             <div className="card-body">
               <div className="fade-in-once">
                 <img src={car} className="logo" id="enter" title="rm coins" />
@@ -219,7 +238,7 @@ function Budget(){
       
 
       <div className="col-lg-3 col-md-4 travel">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <div className="travel">
@@ -241,7 +260,7 @@ function Budget(){
       </div>
 
       <div className="col-lg-3 col-md-4 education">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <img src={education} className="logo" id="enter" title="rm coins" />
@@ -254,7 +273,7 @@ function Budget(){
       </div>
                         
       <div className="col-lg-3 col-md-4 education">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <div className="education">
@@ -278,7 +297,7 @@ function Budget(){
 
       <div className="row justify-content-center savings">
         <div className="col-lg-3 col-md-4">
-          <div className="card custom-card custom-card-center">
+          <div className="card budget-card budget-card-center">
             <div className="card-body">
               <div className="fade-in-once">
                 <img src={savings} className="logo" id="enter" title="rm coins"/>
@@ -292,7 +311,7 @@ function Budget(){
       
 
       <div className="col-lg-3 col-md-4 savings">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <div className="savings">
@@ -314,7 +333,7 @@ function Budget(){
       </div>
 
       <div className="col-lg-3 col-md-4 house">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <img src={house} className="logo" id="enter" title="rm coins"/>
@@ -327,7 +346,7 @@ function Budget(){
       </div>
 
       <div className="col-lg-3 col-md-4 house">
-        <div className="card custom-card custom-card-center">
+        <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
               <div className="household">
@@ -349,7 +368,7 @@ function Budget(){
       </div>
       </div>
 
-      <div className="buttons">
+      <div className="budgetbutton">
         <br />
         <button className="button shadowed-border">
           <h5>Submit</h5>

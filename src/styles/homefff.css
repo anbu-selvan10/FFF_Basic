@@ -1,4 +1,4 @@
-body {
+.homecss {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -122,7 +122,7 @@ body {
     transform: scaleX(1);
 }
 
-.custom-card {
+.home-card {
     border: none; /* Remove default border */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
@@ -131,7 +131,7 @@ body {
 }
 
 /* Add hover effect */
-.custom-card:hover {
+.home-card:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Adjust shadow on hover */
 }
 

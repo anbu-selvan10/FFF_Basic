@@ -35,7 +35,7 @@
     padding-right: 20px;
 }
 
-.custom-card {
+.budget-card {
 
     margin-top: 100px; /* Adjust top margin to move the card */
     background: rgba(0, 0, 0, 0.1); /* Semi-transparent black background color */
@@ -43,15 +43,13 @@
    
 }
 /* CSS to center the card */
-.custom-card-center {
+.budget-card-center {
     width: 35%; /* Adjust the card width as needed */
     margin: 0 auto; /* Center horizontally */
     margin-top: 10px; /* Add top margin for spacing */
 }
-.buttons{
-    padding-left: 670px;
-}
-.button {
+
+.budgetbutton {
     /* Adjust button styling */
     width: 100px; /* Set a fixed width for the button */
     padding: 10px 10px; /* Adjust padding as needed */
@@ -61,13 +59,13 @@
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.button:hover {
+.budgetbutton:hover {
     background-color: #000000; /* Black background on hover */
     color: #ffffff; /* White text color on hover */
     transform: scale(1.1); /* Enlarge the button slightly */
 }
 
-.custom-card {
+.budget-card {
     border: none; /* Remove default border */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
@@ -75,7 +73,7 @@
     
 }
 
-.custom-card:first-child {
+.budget-card:first-child {
     width: 50%; /* Adjust the width of the first card */
     max-width: 400px; /* Set a maximum width for the first card */
     height: 300px; /* Adjust the height of the first card */
@@ -87,14 +85,14 @@
 }
 
 /* Add hover effect */
-.custom-card:hover {
+.budget-card:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Adjust shadow on hover */
 }
 
 .logo{
     width: 100px;
     height: auto;
-    padding-left: 10px;
+    padding-left: 40px;
     background-color: rgba(255, 255, 255,0) transparent;
 
 }
@@ -108,7 +106,7 @@
     text-align: center;
 }
 
-.custom-card {
+.budget-card {
     background-color: #f8f9fa;
     border: 1px solid #ced4da;
     border-radius: 15px;
@@ -117,7 +115,7 @@
     padding-left: 20px;
 }
 
-.custom-card-center {
+.budget-card-center {
     text-align: center;
 }
 
@@ -133,7 +131,7 @@
     padding-right: 20px;
 }
 
-.custom-card:not(:first-child) {
+.budget-card:not(:first-child) {
     width: 100%; /* Adjust this value as needed */
 
     /* Add flexbox to arrange image, text, and input box */
@@ -144,17 +142,17 @@
     
 }
 
-.custom-card:not(:first-child) img {
+.budget-card:not(:first-child) img {
     width: 100px; /* Adjust the image width as needed */
     height: auto;
 }
 
-.custom-card:not(:first-child) label {
+.budget-card:not(:first-child) label {
     text-align: center;
  
 }
 
-.custom-card:not(:first-child) input {
+.budget-card:not(:first-child) input {
     width: 80%; /* Adjust the input width as needed */
     padding: 10px;
    
@@ -165,69 +163,69 @@
     margin-left:650px;
 }
 
-.entertainment .custom-card {
+.entertainment .budget-card {
     background-color: #fbb5a6; /* Light Red */
 }
 
 /* Colorize the form inside the Entertainment card */
-.entertainment .custom-card input[type="text"] {
+.entertainment .budget-card input[type="text"] {
     background-color: #fbb5a6; /* Lighter Red */
 }
 
-.food .custom-card {
+.food .budget-card {
     background-color: #c6ecaa; /* Light Red */
 }
 
 /* Colorize the form inside the Entertainment card */
-.food .custom-card input[type="text"] {
+.food .budget-card input[type="text"] {
     background-color: #c6ecaa; /* Lighter Red */
 }
 
-.medical .custom-card {
+.medical .budget-card {
     background-color: #b8fdf3; /* Light Red */
 }
 
-.medical .custom-card input[type="text"] {
+.medical .budget-card input[type="text"] {
     background-color: #80f8e6; /* Lighter Red */
 }
 
-.clothing .custom-card {
+.clothing .budget-card {
     background-color: #78b1e7; /* Light Red */
 }
 
-.clothing .custom-card input[type="text"] {
+.clothing .budget-card input[type="text"] {
     background-color: #78b1e7; /* Lighter Red */
 }
 
-.travel .custom-card {
+.travel .budget-card {
     background-color: #a495f8; /* Light Red */
 }
 
-.travel .custom-card input[type="text"] {
+.travel .budget-card input[type="text"] {
     background-color: #a495f8; /* Lighter Red */
 }
 
-.education .custom-card {
+.education .budget-card {
     background-color: #dfee94; /* Light Red */
 }
 
-.education .custom-card input[type="text"] {
+.education .budget-card input[type="text"] {
     background-color: #dfee94; /* Lighter Red */
 }
 
-.savings .custom-card {
+.savings .budget-card {
     background-color: #efaef9; /* Light Red */
 }
 
-.savings .custom-card input[type="text"] {
+.savings .budget-card input[type="text"] {
     background-color: #efaef9; /* Lighter Red */
 }
 
-.house .custom-card {
+.house .budget-card {
     background-color: #c9a999cc; /* Light Red */
 }
 
-.house .custom-card input[type="text"] {
+.house .budget-card input[type="text"] {
     background-color: #c9a999cc; /* Lighter Red */
 }
 
@@ -236,6 +234,6 @@
     
 }
 
-body {
+.budget {
   background-color:  #e3ccc893;
 }

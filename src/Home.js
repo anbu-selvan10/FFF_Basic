@@ -1,4 +1,4 @@
-import React from 'react'; // Make sure to import React if not already done
+import React from 'react';
 import './styles/homefff.css';
 import logo from './img/logofff2.jpg'
 import budget from './img/moneyfff.png'
@@ -6,13 +6,17 @@ import rmbot from './img/fffrmbot.png'
 import spend from './img/spend.png'
 import coins from './img/rm coins.png'
 import insta from './img/insta4.png'
+import { useNavigate } from 'react-router-dom';
 
+function Home() {
+    let navigate = useNavigate();
 
-function App() {
-    
+    const onStarted = () => {
+        navigate("/budget");
+    }
 
     return(
-        <>
+        <div className='homecss'>
         
             <div className="blue animated-bg">
                 <section>
@@ -40,9 +44,11 @@ function App() {
                     <h1 style={{fontFamily:'Arial,sans-serif',fontWeight:'bold'}}>FFF</h1>
                     <h5 className="fade-in-once" style={{fontFamily:'sans-serif',fontWeight:'bold'}}>Full-Fledged Financial Assistant</h5>
                     <div className="container">
-                        <button className="button shadowed-border">
+                     <div className="homebutton">
+                        <button onClick={onStarted} className="button shadowed-border">
                             <h5>Get Started</h5>
                         </button>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -56,7 +62,7 @@ function App() {
                             </div>
                             <div className="row">
                                 <div className="col-12 col-lg-4">
-                                    <div className="card custom-card">
+                                    <div className="card home-card">
                                         <div className="card-body">
                                             <img className="logo" src={budget} id="logo-1" title="budgetting" alt="Budgetting" />
                                             <div className="budgetting">
@@ -68,7 +74,7 @@ function App() {
                                 </div>
 
                                 <div className="col-12 col-lg-4">
-                                    <div className="card custom-card">
+                                    <div className="card home-card">
                                         <div className="card-body">
                                             <img className="logo" src={rmbot} id="logo-2" title="rmbot" alt="RM Bot" />
                                             <div className="rmbot">
@@ -80,7 +86,7 @@ function App() {
                                 </div>
 
                                 <div className="col-12 col-lg-4">
-                                    <div className="card custom-card">
+                                    <div className="card home-card">
                                         <div className="card-body">
                                             <img src={coins} className="logo" id="logo-3" title="rm coins" alt="Earn RM Points" />
                                             <div className="rmcoins">
@@ -92,7 +98,7 @@ function App() {
                                 </div>
 
                                 <div className="col-10 col-lg-4 offset-lg-4">
-                                    <div className="card custom-card" id="card4">
+                                    <div className="card home-card" id="card4">
                                         <div className="card-body">
                                             <img src={spend} className="logo" id="logo-3" title="rm coins" alt="Spending Analysis" />
                                             <div className="rmcoins" id="card4">
@@ -114,8 +120,8 @@ function App() {
                     <img src={insta} className="logo" id="insta" alt="Instagram" />
                 </a>
             </footer>
-        </>
+        </div>
     );
 }
 
-export default App;
+export default Home;

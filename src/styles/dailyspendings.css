@@ -31,14 +31,8 @@
 }
 
 
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 /* Apply the animation to your background */
-body{
+.dailyspd{
     background: linear-gradient(45deg,blue, rgb(194, 92, 92),blue) fixed;
     background-size: 200% 200%;
     animation: animatedBackground 10s ease infinite;
@@ -83,13 +77,13 @@ body{
     }
 }
 
-.button:hover {
+.dbutton:hover {
     background-color: #ee4d4d; /* Black background on hover */
     color: #ffffff; /* White text color on hover */
     transform:scale(1.1.1);/* Enlarge the button slightly */
 }
 
-.button{
+.dbutton{
     /* Adjust button styling */
     width: 100px; /* Set a fixed width for the button */
     padding-top: 10px;
