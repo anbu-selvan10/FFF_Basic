@@ -1,0 +1,86 @@
+
+.fade-in-once{
+    text-align: center;
+}
+.register{
+    position: relative;
+    text-align: center;
+}
+.button:hover {
+    background-color: #000000; /* Black background on hover */
+    color: #ffffff; /* White text color on hover */
+    transform: scale(1.1.1); /* Enlarge the button slightly */
+}
+
+.button {
+    /* Adjust button styling */
+    width: 100px; /* Set a fixed width for the button */
+    padding-top: 10px;
+    padding-bottom: 10px; /* Adjust padding as needed */
+    
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.fade-in-once{
+    animation: fadeInOnce 5s ease;
+     /* Make the element initially invisible */
+}
+@keyframes fadeInOnce {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.slide-in-text {
+    padding-top: 20px;
+    position: relative;
+    top: -20%;
+    animation: slideIn 1s forwards;
+}
+
+/* Add sliding animation to H5 tags within .slide-in-text */
+.slide-in-text h5 {
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        top: 0;
+    }
+}
+
+.card.custom-card {
+    width: 400px; /* Set your desired width */
+    height: 420px; /* Set your desired height */
+    margin: 0 auto; /* Center the card horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#logo{
+    opacity:0.1;
+    display:fill;
+}
+
+.custom-card {
+    border: none; /* Remove default border */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.animated-bg {
+    background: linear-gradient(45deg, #3498db, #e74c3c, #9b59b6, #2ecc71);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}

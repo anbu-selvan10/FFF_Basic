@@ -1,0 +1,241 @@
+.navbar{
+    height: 70px;
+    width: 100vw;
+    background: rgba(0,0,0,1);
+    margin:0;
+    padding:0;
+}
+
+.navbar img.logo{
+    height:70px;
+    padding-left: 20px;
+}
+
+.navbar ul li{
+    float: right;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.navbar ul li a {
+    color: white; /* Change the color to white or a color that suits your design */
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+/* Add this CSS to adjust the hover color of the navbar text */
+.navbar ul li a:hover {
+    color: #ff5722; /* Change the hover color to your desired color */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    padding-right: 20px;
+}
+
+.custom-card {
+
+    margin-top: 100px; /* Adjust top margin to move the card */
+    background: rgba(0, 0, 0, 0.1); /* Semi-transparent black background color */
+    padding-top: 30px;
+   
+}
+/* CSS to center the card */
+.custom-card-center {
+    width: 35%; /* Adjust the card width as needed */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 10px; /* Add top margin for spacing */
+}
+.buttons{
+    padding-left: 670px;
+}
+.button {
+    /* Adjust button styling */
+    width: 100px; /* Set a fixed width for the button */
+    padding: 10px 10px; /* Adjust padding as needed */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #000000; /* Black background on hover */
+    color: #ffffff; /* White text color on hover */
+    transform: scale(1.1); /* Enlarge the button slightly */
+}
+
+.custom-card {
+    border: none; /* Remove default border */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    
+    
+}
+
+.custom-card:first-child {
+    width: 50%; /* Adjust the width of the first card */
+    max-width: 400px; /* Set a maximum width for the first card */
+    height: 300px; /* Adjust the height of the first card */
+    border: none; /* Remove default border */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    margin: 10px auto; /* Center the card horizontally and add some margin */
+    padding-top:30px;
+}
+
+/* Add hover effect */
+.custom-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Adjust shadow on hover */
+}
+
+.logo{
+    width: 100px;
+    height: auto;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255,0) transparent;
+
+}
+/* Add your existing CSS styles here */
+
+.container-fluid {
+    margin-top: 20px;
+}
+
+.title{
+    text-align: center;
+}
+
+.custom-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.custom-card-center {
+    text-align: center;
+}
+
+.entertainment {
+    margin-top: 20px;
+}
+
+/* Add additional styles for the smaller cards here */
+/* Adjust as needed for the desired size and layout */
+.col-md-4 .card {
+    width: 90%; /* Adjust the card width as needed */
+    margin:20px; /* Reset margin */
+    padding-right: 20px;
+}
+
+.custom-card:not(:first-child) {
+    width: 100%; /* Adjust this value as needed */
+
+    /* Add flexbox to arrange image, text, and input box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.custom-card:not(:first-child) img {
+    width: 100px; /* Adjust the image width as needed */
+    height: auto;
+}
+
+.custom-card:not(:first-child) label {
+    text-align: center;
+ 
+}
+
+.custom-card:not(:first-child) input {
+    width: 80%; /* Adjust the input width as needed */
+    padding: 10px;
+   
+}
+
+#generate{
+    align-items: center;
+    margin-left:650px;
+}
+
+.entertainment .custom-card {
+    background-color: #fbb5a6; /* Light Red */
+}
+
+/* Colorize the form inside the Entertainment card */
+.entertainment .custom-card input[type="text"] {
+    background-color: #fbb5a6; /* Lighter Red */
+}
+
+.food .custom-card {
+    background-color: #c6ecaa; /* Light Red */
+}
+
+/* Colorize the form inside the Entertainment card */
+.food .custom-card input[type="text"] {
+    background-color: #c6ecaa; /* Lighter Red */
+}
+
+.medical .custom-card {
+    background-color: #b8fdf3; /* Light Red */
+}
+
+.medical .custom-card input[type="text"] {
+    background-color: #80f8e6; /* Lighter Red */
+}
+
+.clothing .custom-card {
+    background-color: #78b1e7; /* Light Red */
+}
+
+.clothing .custom-card input[type="text"] {
+    background-color: #78b1e7; /* Lighter Red */
+}
+
+.travel .custom-card {
+    background-color: #a495f8; /* Light Red */
+}
+
+.travel .custom-card input[type="text"] {
+    background-color: #a495f8; /* Lighter Red */
+}
+
+.education .custom-card {
+    background-color: #dfee94; /* Light Red */
+}
+
+.education .custom-card input[type="text"] {
+    background-color: #dfee94; /* Lighter Red */
+}
+
+.savings .custom-card {
+    background-color: #efaef9; /* Light Red */
+}
+
+.savings .custom-card input[type="text"] {
+    background-color: #efaef9; /* Lighter Red */
+}
+
+.house .custom-card {
+    background-color: #c9a999cc; /* Light Red */
+}
+
+.house .custom-card input[type="text"] {
+    background-color: #c9a999cc; /* Lighter Red */
+}
+
+.entertainment {
+    margin-top: 0px; /* Adjust the top margin to position the card */
+    
+}
+
+body {
+  background-color:  #e3ccc893;
+}

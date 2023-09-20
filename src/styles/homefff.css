@@ -1,0 +1,277 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: black;
+    display: flex;
+    align-items: center;
+    height: 200vh; /* Adjust the total height as needed */
+    flex-direction: column;
+   /* overflow:hidden; Prevent scrolling beyond 200vh */
+ }
+
+
+.features{
+    padding-bottom: 40px;
+    text-align: center;
+
+    
+}
+.navbar{
+    height: 80px;
+    width: 100%;
+    background: rgba(0,0,0,1);
+    margin:0;
+    padding:0;
+}
+
+.logo{
+    width: 120px;
+    height: auto;
+    padding-left: 50px;
+    background-color: rgba(255, 255, 255,0) transparent;
+
+}
+
+.title {
+    text-align: center;
+    flex-grow: 1; /* Fill remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    margin-bottom: 100px;
+}
+
+.title h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 100px;
+}
+
+.button {
+    /* Adjust button styling */
+    width: 150px; /* Set a fixed width for the button */
+    padding: 10px 10px; /* Adjust padding as needed */
+    
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #000000; /* Black background on hover */
+    color: #ffffff; /* White text color on hover */
+    transform: scale(1.1); /* Enlarge the button slightly */
+}
+
+.navbar ul li{
+    float: right;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.navbar ul li a {
+    color: white;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.blue{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(90, 90, 229,0.2); 
+}
+  
+
+/*Shadowed styled border*/
+.shadowed-border {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav .nav-link {
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 25%;
+    height: 2px;
+    bottom: -5px;
+    right: 0;
+    background-color: #007bff; /* Change to your desired color */
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff; /* Change to your desired color */
+}
+
+.navbar-nav .nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+.custom-card {
+    border: none; /* Remove default border */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Add hover effect */
+.custom-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Adjust shadow on hover */
+}
+
+.budgetting{
+    text-align: center;
+}
+
+
+#logo-1{
+    max-width: 80%; /* Adjust the size of the logo */
+    height: auto;
+    display: block; /* Ensures proper centering */
+    margin: 0 auto; /* Center horizontally */
+    padding-left: 10px;
+}
+
+.animated-bg {
+    background: linear-gradient(45deg, #3498db, #e74c3c, #9b59b6, #2ecc71);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.float-bg {
+    background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+    background-size: 200% 200%;
+    animation: floatAnimation 10s ease infinite;
+}
+
+@keyframes floatAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100% -100%;
+    }
+}
+
+.fade-in-once{
+    animation: fadeInOnce 5s ease;
+     /* Make the element initially invisible */
+}
+
+@keyframes fadeInOnce {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#logo-2{
+    max-width: 80%; /* Adjust the size of the logo */
+    height: auto;
+    display: block; /* Ensures proper centering */
+    margin: 0 auto; /* Center horizontally */
+    padding-left: 10px;
+}
+
+.rmbot{
+    text-align: center;
+    padding-top: 40px;
+}
+
+#logo-3{
+
+    max-width: 80%; /* Adjust the size of the logo */
+    height: auto;
+    display: block; /* Ensures proper centering */
+    margin: 0 auto; /* Center horizontally */
+    padding-left: 10px;
+}
+
+.rmcoins
+{
+    text-align: center;
+}
+
+#card4{
+    position: center;
+}
+
+.footer {
+    background-color: rgb(233, 136, 80);
+    padding-top: 5px;
+    width: 100%;
+    text-align: center;
+    
+    
+    justify-content: space-between;
+}
+
+.footertext{
+    color:black;
+    text-align: center;
+    align-items: center;
+}
+
+.slide-in-text {
+    padding-top: 40px;
+    position: relative;
+    top: -8%; /* Start outside the viewport on the top */
+    animation: slideIn 1s forwards; /* Play the animation once and keep the final state */
+}
+
+/* Define the slide-in animation */
+@keyframes slideIn {
+    to {
+        top: 0; /* Slide in to the final position */
+    }
+}
+
+#insta-link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px; /* Adjust the margin as needed */
+    text-decoration: none; /* Remove underline from the link */
+    color: white; /* Set the link color */
+}
+
+#insta {
+    max-width: 100px; /* Adjust the max width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#twitter{
+    size: 0cqh;
+}
+
+

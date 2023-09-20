@@ -1,0 +1,142 @@
+
+@keyframes animatedBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+/* Center the form inside the card */
+#register {
+    text-align: center;
+}
+
+
+/* CSS to center the buttons */
+#record .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#record{
+    align-items: center;
+}
+
+
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Apply the animation to your background */
+body{
+    background: linear-gradient(45deg,blue, rgb(194, 92, 92),blue) fixed;
+    background-size: 200% 200%;
+    animation: animatedBackground 10s ease infinite;
+    color: #fff; /* Text color on top of the animated background */
+    text-align: center; /* Center the content vertically and horizontally */
+    /* Add padding to the content */
+}
+
+.navbar{
+    height: 60px;
+    width: 100%;
+    background: rgba(0,0,0,1);
+    margin:0;
+    padding:0;
+}
+
+.navbar img.logo{
+    height:60px;
+    padding-left: 20px;
+}
+
+
+
+#dspendings{
+    color:black;
+}
+
+#blabla{
+    color:black;
+}
+
+.fade-in-once{
+    animation: fadeInOnce 5s ease;
+     /* Make the element initially invisible */
+}
+@keyframes fadeInOnce {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.button:hover {
+    background-color: #ee4d4d; /* Black background on hover */
+    color: #ffffff; /* White text color on hover */
+    transform:scale(1.1.1);/* Enlarge the button slightly */
+}
+
+.button{
+    /* Adjust button styling */
+    width: 100px; /* Set a fixed width for the button */
+    padding-top: 10px;
+    padding-bottom: 10px; /* Adjust padding as needed */
+    
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+
+.navbar ul li{
+
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.navbar ul li a {
+    color: white;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 22%;
+    height: 2px;
+    bottom: -5px;
+    right: 0;
+    background-color: #007bff; /* Change to your desired color */
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff; /* Change to your desired color */
+}
+
+.navbar-nav .nav-link:hover::before {
+    transform: scaleX(1);
+}
