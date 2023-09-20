@@ -48,16 +48,17 @@ function Budget(){
               <a onClick={onR} className="nav-link" href="#"><b>RM Bot</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>RM COINS:</b></a>
+              <a className="nav-link" href="#"><b>RM Coins:</b></a>
             </li>
           </ul>
         </div>
       </nav>
       <br />
 
-      <div className="title">
+      <div className="budgettitle">
         <h2><b>Weekly Budgeting</b></h2>
       </div>
+      <br/>
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-12">
@@ -81,7 +82,7 @@ function Budget(){
           <div className="card budget-card budget-card-center entertainment">
             <div className="card-body">
               <div className="fade-in-once">
-                <img src={enter} className="logo" id="enter" title="rm coins" />
+                <img src={enter} className="cardlogo" id="enter" title="rm coins" />
                 <div className="entertainment">
                   <h2><b>Entertainment</b></h2>
                 </div>
@@ -117,7 +118,7 @@ function Budget(){
         <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
-              <img src={food} className="logo" id="food" title="rm coins" />
+              <img src={food} className="cardlogo" id="food" title="rm coins" />
               <div className="food">
                 <label><h2 id="yourearnings"><b>Food</b></h2></label>
               </div>
@@ -154,7 +155,7 @@ function Budget(){
           <div className="card budget-card budget-card-center">
             <div className="card-body">
               <div className="fade-in-once">
-                <img src={medical} className="logo" id="enter" title="rm coins" />
+                <img src={medical} className="cardlogo" id="enter" title="rm coins" />
                 <div className="Medical">
                   <h2><b>Medical</b></h2>
                 </div>
@@ -190,7 +191,7 @@ function Budget(){
         <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
-              <img src={clothes} className="logo" id="enter" title="rm coins" />
+              <img src={clothes} className="cardlogo" id="enter" title="rm coins" />
               <div className="clothes">
                 <label><h2 id="yourearnings"><b>Clothing</b></h2></label>
               </div>
@@ -227,7 +228,7 @@ function Budget(){
           <div className="card budget-card budget-card-center">
             <div className="card-body">
               <div className="fade-in-once">
-                <img src={car} className="logo" id="enter" title="rm coins" />
+                <img src={car} className="cardlogo" id="enter" title="rm coins" />
                 <div className="Transportation">
                   <h2><b>Travelling</b></h2>
                 </div>
@@ -263,7 +264,7 @@ function Budget(){
         <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
-              <img src={education} className="logo" id="enter" title="rm coins" />
+              <img src={education} className="cardlogo" id="enter" title="rm coins" />
               <div className="education">
                 <label><h2 id="yourearnings"><b>Education</b></h2></label>
               </div>
@@ -300,7 +301,7 @@ function Budget(){
           <div className="card budget-card budget-card-center">
             <div className="card-body">
               <div className="fade-in-once">
-                <img src={savings} className="logo" id="enter" title="rm coins"/>
+                <img src={savings} className="cardlogo" id="enter" title="rm coins"/>
                 <div className="Savings">
                   <h2><b>Savings</b></h2>
                 </div>
@@ -336,7 +337,7 @@ function Budget(){
         <div className="card budget-card budget-card-center">
           <div className="card-body">
             <div className="fade-in-once">
-              <img src={house} className="logo" id="enter" title="rm coins"/>
+              <img src={house} className="cardlogo" id="enter" title="rm coins"/>
               <div className="household">
                 <label><h2 id="yourearnings"><b>Household</b></h2></label>
               </div>
@@ -368,13 +369,13 @@ function Budget(){
       </div>
       </div>
 
-      <div className="budgetbutton">
+      
         <br />
-        <button className="button shadowed-border">
+        <button className="budgetbutton shadowed-border">
           <h5>Submit</h5>
         </button>
         <br />
-      </div>
+     
         </div>
     );
   

@@ -1,6 +1,6 @@
 import React from 'react'; 
 import './styles/dailyspendings.css';
-import logo from './img/logofff2.jpg';
+import dlogo from './img/logofff2.jpg';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -35,7 +35,7 @@ function DTracker(){
 
         <div className='dailyspd'>
         <nav className="navbar navbar-expand-lg">
-        <img className="logo" src={logo} id="imgcoins" alt="Logo" />
+        <img className="dlogo" src={dlogo} id="imgcoins" alt="Logo" />
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">

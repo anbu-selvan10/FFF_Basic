@@ -1,17 +1,18 @@
 import React from 'react';
 import './styles/rmbot.css';
-import botlogo from './img/logofff2.jpg';
-import text from './img/message.png';
-import Rmbot from './img/fffrmbot.png';
+import botlogofff from './img/logofff2.jpg';
+
+import RmBot from './img/fffrmbot.png';
 
 function RMBot(){
 
     return(
       <div className='rmbot2'>
-        <nav className="botnavbar botnavbar-expand-lg">
-        <img className="logo" src={botlogo} id="imgcoins" />
-        <div className="collapse botnavbar-collapse justify-content-end" id="botnavbarNav">
-          <ul className="botnavbar-nav ml-auto">
+      
+      <nav className="navbar navbar-expand-lg" id="botnav">
+        <img className="botlogo" src={botlogofff} id="fffbotnav" />
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <a className="nav-link" href="#"><b>Home</b></a>
             </li>
@@ -22,44 +23,62 @@ function RMBot(){
               <a className="nav-link" href="#"><b>Daily Tracker</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>RM Coins:</b></a>
+              <a className="nav-link" href="#"><b>RM Bot</b></a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#"><b>RM COINS:</b></a>
             </li>
           </ul>
         </div>
       </nav>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
 
       
-      <div className="container-fluid">
+      <div className="botcontainer-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-12">
-            <div className="bot-card bot-card bot-card-center">
+            <div className="botcard budget-card budget-card-center">
               <div className="card-body">
-               <img src={Rmbot} id="rmbot2"/>
-               <br/>
-                <div className="bottitle">
-                  <label><h2 id="yourearnings"><b>Your Queries</b></h2></label>
-                  </div>
-                  <br/>
-               
-                  <input type="text" id="chatbox" placeholder="Ask your queries"/>
-
+                <div className="fade-in-once">
+                <img className="botimage" src={RmBot} id="rmbot2"/>
                 
-                  <button className="botbutton shadowed-border">
-                      <img src={text} className="logo" id="logo"/>
+                <br/>
+                <br/>
+                <div className="botcardtext">
+                  <h3><b>Your Queries</b></h3>
+                </div>
+                <br/>
+                  <input type="text" id="chatbot" placeholder='Ask your queries'/>
+                </div>
+                <br/>
+
+               
+                  <button className="botbutton">
+                    Ask
                   </button>
                
-                
-                   
+              
               </div>
             </div>
           </div>
         </div>
       </div>
-
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      
      
          
        
-
 
 
 

@@ -22,15 +22,10 @@ function Home() {
                 <section>
                     <div className="container">
                         <nav className="navbar navbar-expand-lg">
-                            <img className="logo" id="ffflogo" src={logo} alt="Logo" />
+                            <img className="homelogo" id="ffflogo" src={logo} alt="Logo" />
                             <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                                 <ul className="navbar-nav ml-auto">
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#"><b>ABOUT US</b></a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#"><b>FAQ</b></a>
-                                    </li>
+                                    
                                     <li className="nav-item">
                                         <a className="nav-link" href="#"><b>CONTACT US</b></a>
                                     </li>

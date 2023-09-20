@@ -57,6 +57,7 @@
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    margin-left: 650px;
 }
 
 .budgetbutton:hover {
@@ -89,10 +90,10 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Adjust shadow on hover */
 }
 
-.logo{
+.cardlogo{
     width: 100px;
     height: auto;
-    padding-left: 40px;
+    
     background-color: rgba(255, 255, 255,0) transparent;
 
 }
@@ -102,7 +103,7 @@
     margin-top: 20px;
 }
 
-.title{
+.budgettitle{
     text-align: center;
 }
 
