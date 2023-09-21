@@ -1,10 +1,25 @@
 import React from 'react';
 import './styles/rmbot.css';
 import botlogofff from './img/logofff2.jpg';
-
+import { useState } from 'react';
+import axios from 'axios';
 import RmBot from './img/fffrmbot.png';
 
 function RMBot(){
+
+    const [bot, setBot] = useState("");
+    const [msg, setMsg] = useState("");
+
+    const ok = () => {
+      axios.post('http://localhost:4000/rmbot', { bot })
+          .then(response => {
+              setMsg(response.message);
+              console.log(response.message);
+          })
+          .catch(error => {
+              console.error(error);
+          });
+  };
 
     return(
       <div className='rmbot2'>
@@ -55,14 +70,16 @@ function RMBot(){
                   <h3><b>Your Queries</b></h3>
                 </div>
                 <br/>
-                  <input type="text" id="chatbot" placeholder='Ask your queries'/>
+                  <input onChange={(e) => setBot(e.target.value)} type="text" id="chatbot" placeholder='Ask your queries'/>
                 </div>
                 <br/>
 
                
-                  <button className="botbutton">
+                  <button onClick={ok} className="botbutton">
                     Ask
                   </button>
+                
+                <p>{msg}</p>
                
               
               </div>

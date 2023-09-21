@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const { PythonShell } = require('python-shell');
 const path = require('path');
+const openai = require('./openai');
 
 const scriptPath = path.join(__dirname, 'graphs.py');
 
@@ -166,3 +167,19 @@ app.post('/generate-graph', (req, res) => {
       res.sendFile(path.join(__dirname, 'graph.png'));
     });
   });
+
+app.post('/rmbot', async (req, res) => {
+  const userMessage = req.bot;
+
+  try {
+    const response = await openai.post('/', {
+      prompt: userMessage,
+      max_tokens: 150
+    });
+
+    const botMessage = response.data.choices[0].text.trim();
+    res.json({ message: botMessage });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});

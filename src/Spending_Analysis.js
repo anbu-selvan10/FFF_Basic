@@ -29,6 +29,8 @@ const GraphComponent = () => {
 
   return (
     <div>
+
+    
       <h2>Generated Graph</h2>
       {graphUrl ? (
         <img src={graphUrl} alt="Generated Graph" />
