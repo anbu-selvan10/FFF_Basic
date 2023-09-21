@@ -21,7 +21,7 @@
 
     
 }
-.navbar{
+.homenavbar{
     height: 80px;
     width: 100%;
     background: rgba(0,0,0,1);
@@ -69,19 +69,19 @@
     transform: scale(1.1); /* Enlarge the button slightly */
 }
 
-.navbar ul li{
+.homenavbar ul li{
     float: right;
     margin-right: 20px;
     display: inline-block;
 }
 
-.navbar ul li a {
+.homenavbar ul li a {
     color: white;
     font-family: Arial, sans-serif;
     text-decoration: none;
 }
 
-.navbar ul {
+.homenavbar ul {
     list-style: none;
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
@@ -101,14 +101,14 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-nav .nav-link {
+.homenavbar-nav .nav-link {
     transition: color 0.3s ease-in-out;
 }
 
-.navbar-nav .nav-link::before {
+.homenavbar-nav .nav-link::before {
     content: '';
     position: absolute;
-    width: 38%;
+    width: 60%;
     height: 2px;
     bottom: -5px;
     right: 0;
@@ -118,11 +118,11 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.navbar-nav .nav-link:hover {
+.homenavbar-nav .nav-link:hover {
     color: #007bff; /* Change to your desired color */
 }
 
-.navbar-nav .nav-link:hover::before {
+.homenavbar-nav .nav-link:hover::before {
     transform: scaleX(1);
 }
 

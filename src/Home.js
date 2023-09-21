@@ -21,10 +21,10 @@ function Home() {
             <div className="blue animated-bg">
                 <section>
                     <div className="container">
-                        <nav className="navbar navbar-expand-lg">
+                        <nav className="homenavbar navbar-expand-lg">
                             <img className="homelogo" id="ffflogo" src={logo} alt="Logo" />
-                            <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-                                <ul className="navbar-nav ml-auto">
+                            <div className="collapse homenavbar-collapse justify-content-end" id="navbarNav">
+                                <ul className="homenavbar-nav ml-auto">
                                     
                                     <li className="nav-item">
                                         <a className="nav-link" href="#"><b>CONTACT US</b></a>

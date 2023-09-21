@@ -4,6 +4,7 @@ import dlogo from './img/logofff2.jpg';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 function DTracker(){
@@ -12,10 +13,33 @@ function DTracker(){
     
   const [rmCoins, setRmCoins] = useState(0);
 
-  const onRecord = () => {
+  const [enter, setEnter] = useState(0);
+  const [med, setMed] = useState(0);
+  const [groc, setGroc] = useState(0);
+  const [trans, setTrans] = useState(0);
+  const [lo, setLo] = useState(0);
+  const [oth, setOth] = useState(0);
+
+  const username = "Anbu";
+
+  const numericEnter = parseInt(enter);
+  const numericMed = parseInt(med);
+  const numericGroc = parseInt(groc);
+  const numericTrans = parseInt(trans);
+  const numericLo = parseInt(lo);
+  const numericOth = parseInt(oth);
+
+  const send = () => {
+    axios.post('http://localhost:4000/register', { numericEnter, numericMed, numericGroc, numericTrans, numericLo, numericOth, username })
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.error("Registration error:", error);
+        });
     setRmCoins(prevRmCoins => prevRmCoins + 1);
-    alert("Congratulations! You have earned a RM Coin");
-  }
+    alert("Congratulations! You have earned a RM Coin");
+};
 
 
   const onB = () => {
@@ -43,6 +67,9 @@ function DTracker(){
             </li>
             <li className="nav-item">
             <a onClick={onB} className="nav-link" href="#"><b>Budgeting</b></a>
+            </li>
+            <li className="nav-item">
+            <a onClick={onB} className="nav-link" href="#"><b>Spending Analysis</b></a>
             </li>
             <li className="nav-item">
             <a className="nav-link" href="#"><b>Daily Tracker</b></a>
@@ -84,14 +111,14 @@ function DTracker(){
                   <h5 id="entertainment">Entertainment</h5>
                 </label>
               </div>
-              <input type="text" id="entertainment" className="form-control mb-3" />
+              <input type="numeric" onChange={(e) => setEnter(e.target.value)} id="entertainment" className="form-control mb-3" />
 
               <div className="fade-in-once mb-3">
                 <label>
                   <h5 id="medical">Medical Expenses</h5>
                 </label>
               </div>
-              <input type="text" id="medical" className="form-control mb-3" />
+              <input type="numeric" onChange={(e) => setMed(e.target.value)} id="medical" className="form-control mb-3" />
             </form>
           </div>
 
@@ -103,14 +130,14 @@ function DTracker(){
                   <h5 id="household">Groceries & Household</h5>
                 </label>
               </div>
-              <input type="text" id="household" className="form-control mb-3" />
+              <input type="numeric" onChange={(e) => setGroc(e.target.value)} id="household" className="form-control mb-3" />
 
               <div className="fade-in-once mb-3">
                 <label>
                   <h5 id="transportation">Transportation</h5>
                 </label>
               </div>
-              <input type="text" id="transportation" className="form-control mb-3" />
+              <input type="numeric" onChange={(e) => setTrans(e.target.value)} id="transportation" className="form-control mb-3" />
             </form>
           </div>
         </div>
@@ -124,7 +151,7 @@ function DTracker(){
                   <h5 id="loan">Loan</h5>
                 </label>
               </div>
-              <input type="text" id="loan" className="form-control mb-3" />
+              <input type="numeric" onChange={(e) => setLo(e.target.value)} id="loan" className="form-control mb-3" />
             </form>
           </div>
 
@@ -135,7 +162,7 @@ function DTracker(){
                   <h5 id="others">Others</h5>
                 </label>
               </div>
-              <input type="text" id="others" className="form-control mb-3" />
+              <input type="numeric" onChange={(e) => setOth(e.target.value)} id="others" className="form-control mb-3" />
             </form>
           </div>
         </div>
@@ -145,7 +172,7 @@ function DTracker(){
         <div className="row justify-content-center mt-2" id="record">
           <div className="col-lg-4 col-md-6 d-flex justify-content-center">
           <div className="dbutton">
-            <button onClick={onRecord} className="btn btn-primary mx-2">Record</button>
+            <button onClick={send} className="btn btn-primary mx-2">Record</button>
             </div>
           </div>
         </div>

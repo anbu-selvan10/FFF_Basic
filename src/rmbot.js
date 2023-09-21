@@ -20,6 +20,9 @@ function RMBot(){
               <a className="nav-link" href="#"><b>Budgeting</b></a>
             </li>
             <li className="nav-item">
+              <a className="nav-link" href="#"><b>Spending Analysis</b></a>
+            </li>
+            <li className="nav-item">
               <a className="nav-link" href="#"><b>Daily Tracker</b></a>
             </li>
             <li className="nav-item">
