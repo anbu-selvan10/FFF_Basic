@@ -1,44 +1,54 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import './styles/spendinganal.css';
 import axios from 'axios';
+import { useEffect } from 'react';
 
 const GraphComponent = () => {
-  const [graphUrl, setGraphUrl] = useState(null);
+  const [val, setVal] = useState({});
 
-    const labels = [
-      'numericearn', 'numericmov', 'numericstr', 'numericot1', 'numericrest',
-      'numericgro', 'numericot2', 'numericbill', 'numericins', 'numericot3',
-      'numericcl', 'numericpcp', 'numericot4', 'numericfue', 'numericveh',
-      'numericot5', 'numericfee', 'numericbook', 'numericot6', 'numericinv',
-      'numericret', 'numericot7', 'numericegw', 'numericrent', 'numericot8'
-    ];
-
-    const values = [
-      100, 150, 200, 50, 75, 120, 80, 40, 60, 90, 110, 130,
-      40, 60, 80, 100, 120, 90, 110, 30, 20, 40, 60, 130, 110
-    ]
 
   useEffect(() => {
-    axios.post('http://localhost:4000/generate-graph', { labels, values })
-      .then(response => {
-        setGraphUrl(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching graph:', error);
-      });
+    axios.get('http://localhost:4000/get-values')
+          .then(response => {
+              console.log(response.data.values);
+          })
+          .catch(error => {
+              console.error(error);
+          });
   }, []);
 
   return (
-    <div>
+    <div className="spendcontainer">
+      <div className="movies">
+        <h5>Movies, Shows & Events</h5>
+        <input type="numeric" id="movies" />
+        
+        <h5>Streaming Subscriptions</h5>
+        <input type="numeric" id="subs" />
+        
+        <h5>Others</h5>
+        <input type="numeric" id="others1" />
+      </div>
 
-    
-      <h2>Generated Graph</h2>
-      {graphUrl ? (
-        <img src={graphUrl} alt="Generated Graph" />
-      ) : (
-        <p>Loading graph...</p>
-      )}
+      <div className="chart-container">
+        <h2>Bar Chart</h2>
+        <div className="bar" style={{ height: `${val[0].numericmov}px`, background: 'linear-gradient(to top, #3498db, #2980b9)' }}>
+          <span>Movies</span>
+        </div>
+        <div className="bar" style={{ height: `${val[0].numericstr}px`, background: 'linear-gradient(to top, #2ecc71, #27ae60)' }}>
+          <span>Streaming Subscriptions</span>
+        </div>
+        <div className="bar" style={{ height: `${val[0].numericot1}px`, background: 'linear-gradient(to top, #e74c3c, #c0392b)' }}>
+          <span>Others</span>
+        </div>
+      </div>
     </div>
+  
   );
 };
 
 export default GraphComponent;
+
+
+
+

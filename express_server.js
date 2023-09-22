@@ -5,9 +5,8 @@ const morgan = require("morgan");
 const cors = require("cors");
 const { PythonShell } = require('python-shell');
 const path = require('path');
-const openai = require('./openai');
 
-const scriptPath = path.join(__dirname, 'graphs.py');
+// const scriptPath = path.join(__dirname, 'graphs.py');
 
 const app = express();
 const port = 4000;
@@ -71,7 +70,7 @@ const dailyTrackingSchema = new mongoose.Schema({
 const DailyTracking = mongoose1.model('DailyTracking', dailyTrackingSchema);
 const WeeklyBudget = mongoose2.model('WeeklyBudget', weeklyBudgetSchema);
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+app.listen(port, (req,res) => console.log(`Server is running on port ${port}`));
 
 app.post("/register", (req, res) => {
     console.log(req.body);
@@ -141,45 +140,33 @@ newUser
     });
 });
 
-app.post('/generate-graph', (req, res) => {
-    const { labels, values } = req.body;
-
-      const inputData = {
-        labels,
-        values
-      };
-
-
-    const options = {
-      mode: 'json',
-      pythonOptions: ['-u'], 
-      scriptPath: path.dirname(scriptPath),
-      args: [JSON.stringify(inputData)] 
-    };
-  
-    PythonShell.run(path.basename(scriptPath), options, (err, result) => {
-      if (err) {
-        console.error('Error running Python script:', err);
-        res.status(500).send('Error generating graph');
-        return;
-      }
-  
-      res.sendFile(path.join(__dirname, 'graph.png'));
-    });
-  });
-
-app.post('/rmbot', async (req, res) => {
-  const userMessage = req.bot;
-
+app.get('/get-values', async (req, res) => {
   try {
-    const response = await openai.post('/', {
-      prompt: userMessage,
-      max_tokens: 150
-    });
 
-    const botMessage = response.data.choices[0].text.trim();
-    res.json({ message: botMessage });
+    const values = await WeeklyBudget.find();
+
+    res.json({ values });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
+
+// app.post('/rmbot', async (req, res) => {
+//   const userMessage = req.bot;
+
+//   try {
+//     const response = await openai.post('/', {
+//       prompt: userMessage,
+//       max_tokens: 10
+//     });
+
+//     const botMessage = response.data.choices[0].text.trim();
+//     res.json({ message: botMessage });
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// });
+
+
+
+

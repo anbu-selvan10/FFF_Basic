@@ -1,0 +1,68 @@
+
+  
+  .bar {
+    width: 100px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    position: relative;
+  }
+  
+  .bar span {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Style the bars differently */
+  .bar:nth-child(odd) {
+    background-color: #3498db;
+  }
+  
+  .bar:nth-child(even) {
+    background-color: #e74c3c;
+  }
+  .positioning{
+    position: absolute;
+  }
+  .spendcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+  }
+  
+  .movies, .chart-container {
+    margin: 20px;
+  }
+  
+  .bar {
+    width: 100px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    position: relative;
+    transition: height 1s;
+  }
+  
+  .bar span {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Hover effect */
+  .bar:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .chart-container {
+    margin:10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100vw;
+    flex-wrap: wrap;
+  }
+  

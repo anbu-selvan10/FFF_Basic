@@ -78,8 +78,9 @@ function Budget(){
     const numericegw = parseInt(egw);
     const numericrent = parseInt(rent);
     const numericot8 = parseInt(ot8);
-
+    
     const ok = () => {
+      if(numericearn == numericot8+numericrent+numericegw+numericot7+numericret+numericinv+numericot6+numericbook+numericfee+numericot5+numericveh+numericfue+numericot4+numericpcp+numericcl+numericot3+numericins+numericbill+numericot2+numericgro+numericrest+numericot1+numericstr+numericmov){
       axios.post('http://localhost:4000/submit', { week, numericearn, numericmov, numericstr, numericot1, numericrest, numericgro, numericot2, numericbill, numericins, numericot3, numericcl, numericpcp, numericot4, numericfue, numericveh, numericot5, numericfee, numericbook, numericot6, numericinv, numericret, numericot7, numericegw, numericrent, numericot8 })
           .then(response => {
               console.log(response.data);
@@ -87,6 +88,9 @@ function Budget(){
           .catch(error => {
               console.error(error);
           });
+      }else{
+        alert("All your earnings should be budgeted");
+      }
   };
 
 
@@ -180,7 +184,7 @@ function Budget(){
           <div className="card-body">
             <div className="fade-in-once">
               <div className="movies">
-                <h5>Movies,Shows & Events</h5>
+                <h5>Movies & Shows</h5>
                 <input onChange={(e) => setMov(e.target.value)} type="numeric" id="movies" />
 
                 <h5>Streaming Subscriptions</h5>
