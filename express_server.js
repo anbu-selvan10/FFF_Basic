@@ -142,9 +142,7 @@ newUser
 
 app.get('/get-values', async (req, res) => {
   try {
-
     const values = await WeeklyBudget.find();
-
     res.json({ values });
   } catch (error) {
     res.status(500).json({ error: error.message });
