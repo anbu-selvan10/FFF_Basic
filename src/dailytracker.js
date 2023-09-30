@@ -108,6 +108,7 @@ function DTracker(){
             <form id="register" method="post" className="text-center">
               <div className="fade-in-once mb-3">
                 <label>
+                
                   <h5 id="entertainment">Entertainment</h5>
                 </label>
               </div>
@@ -115,25 +116,35 @@ function DTracker(){
 
               <div className="fade-in-once mb-3">
                 <label>
+                <br />
+                <br />
                   <h5 id="medical">Medical Expenses</h5>
+                  
                 </label>
               </div>
               <input type="numeric" onChange={(e) => setMed(e.target.value)} id="medical" className="form-control mb-3" />
             </form>
           </div>
 
+          
+
+          
+         
           {/* Second row */}
           <div className="col-lg-4 col-md-6">
             <form id="register" method="post" className="text-center">
               <div className="fade-in-once mb-3">
                 <label>
+                
                   <h5 id="household">Groceries & Household</h5>
                 </label>
               </div>
               <input type="numeric" onChange={(e) => setGroc(e.target.value)} id="household" className="form-control mb-3" />
 
               <div className="fade-in-once mb-3">
-                <label>
+                <label> 
+                <br />
+                <br />
                   <h5 id="transportation">Transportation</h5>
                 </label>
               </div>
@@ -141,6 +152,8 @@ function DTracker(){
             </form>
           </div>
         </div>
+
+        
 
         {/* Third row */}
         <div className="row justify-content-center mt-2">
@@ -177,7 +190,9 @@ function DTracker(){
           </div>
         </div>
       </div>
-    
+      <br />
+                <br />
+                
 
 
        </div>

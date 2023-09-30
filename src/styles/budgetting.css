@@ -6,9 +6,12 @@
     padding:0;
 }
 
-.navbar img.logo{
-    height:70px;
-    padding-left: 20px;
+
+
+#budglogo{
+    height: 70px;
+    width: 120px;
+    margin-right: 50px;
 }
 
 .navbar ul li{

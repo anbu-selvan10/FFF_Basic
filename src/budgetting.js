@@ -116,7 +116,7 @@ function Budget(){
     
         <div className='budget'>
         <nav className="navbar navbar-expand-lg">
-        <img className="logo" src={logofff} id="imgcoins" />
+        <img className="logo" src={logofff} id="budglogo" />
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">

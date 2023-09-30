@@ -4,6 +4,13 @@ import Home from './Home.js';
 import RMBot from './rmbot.js';
 import GraphComponent from './Spending_Analysis.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import Linechart from './Linechart'
+// import PieChart from './Piechart'
+
+
+
+
+
 
 function App() {
   return (
@@ -15,10 +22,20 @@ function App() {
       <Route path='/dtracker' element={<DTracker />} />
       <Route path='/bot' element={<RMBot />} />
       <Route path='/spend' element={<GraphComponent />} />
+      {/* <Route path='/' element={<PieChart />} />
+      <Route path='/' element={<Linechart />} /> */}
+
+      
+      
+         
       </Routes>
     </BrowserRouter>
+      
     </div>
   );
 }
 
 export default App;
+
+
+
