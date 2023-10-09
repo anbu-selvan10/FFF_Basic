@@ -11,15 +11,15 @@ function RMBot(){
     const [msg, setMsg] = useState("");
 
     const ok = () => {
-      axios.post('http://localhost:4000/rmbot', { bot })
-          .then(response => {
-              setMsg(response.message);
-              console.log(response.message);
-          })
-          .catch(error => {
-              console.error(error);
-          });
-  };
+      axios.post('http://localhost:4000/chat', { message: msg }) 
+        .then(response => {
+          setBot(response.data.message); 
+          console.log(response.data.message);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    };
 
     return(
       <div className='rmbot2'>
@@ -70,7 +70,7 @@ function RMBot(){
                   <h3><b>Your Queries</b></h3>
                 </div>
                 <br/>
-                  <input onChange={(e) => setBot(e.target.value)} type="text" id="chatbot" placeholder='Ask your queries'/>
+                  <input onChange={(e) => setMsg(e.target.value)} type="text" id="chatbot" placeholder='Ask your queries'/>
                 </div>
                 <br/>
 
@@ -79,7 +79,7 @@ function RMBot(){
                     Ask
                   </button>
                 
-                <p>{msg}</p>
+                <p>{bot}</p>
                
               
               </div>

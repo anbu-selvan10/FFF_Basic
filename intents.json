@@ -1,0 +1,30 @@
+{
+    "intents": [
+      {
+        "tag": "greetings",
+        "patterns": ["hello", "hey", "hi"],
+        "responses": ["Hello! How can I assist you with your financial questions?", "Hi there! What would you like to know about finance?"]
+      },
+      {
+        "tag": "investment_advice",
+        "patterns": ["What should I invest in?", "Can you suggest an investment?", "Investment advice"],
+        "responses": ["I can offer investment recommendations. To get started, could you please tell me about your financial goals and risk tolerance?", "Investing wisely is crucial. To provide personalized advice, I need to know more about your financial objectives and risk preferences."]
+      },
+      {
+        "tag": "budgeting_tips",
+        "patterns": ["How can I budget my finances?", "Give me budgeting tips", "Budgeting advice"],
+        "responses": ["Budgeting is a great way to manage your money. I can provide tips and guidance. What specific budgeting information are you looking for?", "Budgeting can help you achieve your financial goals. To assist you better, could you specify your budgeting needs?"]
+      },
+      {
+        "tag": "savings_strategies",
+        "patterns": ["What are some savings strategies?", "How can I save more money?", "Savings tips"],
+        "responses": ["Saving money is important. I can suggest strategies to boost your savings. Are you interested in general savings tips or something specific?", "Savings can secure your financial future. To provide relevant advice, could you please clarify your savings goals?"]
+      },
+      {
+        "tag": "financial_goals",
+        "patterns": ["How can I set financial goals?", "How can I be financially stable?", "Give me tips on setting financial goals", "Financial goal advice"],
+        "responses": ["Setting financial goals is a smart move. I can provide guidance. Are you looking for tips on setting short-term or long-term financial goals?", "Having clear financial goals is essential. To offer the best advice, could you specify the type of financial goals you want to set?"]
+      }
+    ]
+  }
+  
