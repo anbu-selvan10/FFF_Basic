@@ -6,12 +6,14 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
 function DTracker(){
 
   let navigate = useNavigate();
     
-  const [rmCoins, setRmCoins] = useState(0);
+  const [rmCoins, setRmCoins] = useState(() => {
+    const storedCoins = localStorage.getItem('coins');
+    return parseInt(storedCoins) ? parseInt(storedCoins) : 0;
+  });
 
   const [enter, setEnter] = useState(0);
   const [med, setMed] = useState(0);
@@ -19,8 +21,13 @@ function DTracker(){
   const [trans, setTrans] = useState(0);
   const [lo, setLo] = useState(0);
   const [oth, setOth] = useState(0);
+  const [dayNo, setDayNo] = useState(1);
+  const [weekNo, setWeekNo] = useState(1);
+  const [count, setCount] = useState(0);
 
   const username = "Anbu";
+  const day = `Day ${dayNo}`;
+  const week = `Week ${weekNo}`;
 
   const numericEnter = parseInt(enter);
   const numericMed = parseInt(med);
@@ -30,7 +37,7 @@ function DTracker(){
   const numericOth = parseInt(oth);
 
   const send = () => {
-    axios.post('http://localhost:4000/register', { numericEnter, numericMed, numericGroc, numericTrans, numericLo, numericOth, username })
+    axios.post('http://localhost:4000/register', { numericEnter, numericMed, numericGroc, numericTrans, numericLo, numericOth, username, day, week })
         .then(response => {
             console.log(response.data);
         })
@@ -38,9 +45,20 @@ function DTracker(){
             console.error("Registration error:", error);
         });
     setRmCoins(prevRmCoins => prevRmCoins + 1);
-    alert("Congratulations! You have earned a RM Coin");
+    localStorage.setItem('coins', rmCoins+1);
+    setCount(prevCount => prevCount + 1);
+    if (count >= 6) {
+      setWeekNo(prevWeekNo => prevWeekNo+1);
+      setDayNo(1);
+      setCount(0);
+    } else{
+      setDayNo(prevDayNo => prevDayNo + 1);
+    }
+
+    alert("Congratulations! You have earned a RM Coin");
 };
 
+  const coins = localStorage.getItem('coins');
 
   const onB = () => {
     navigate("/budget");
@@ -78,7 +96,7 @@ function DTracker(){
             <a onClick={onR} className="nav-link" href="#"><b>RM Bot</b></a>
             </li>
             <li className="nav-item">
-            <a className="nav-link" href="#"><b>RM Coins:{rmCoins}</b></a>
+            <a className="nav-link" href="#"><b>RM Coins:{coins}</b></a>
             </li>
           </ul>
         </div>
@@ -88,6 +106,8 @@ function DTracker(){
         <div className="dtitle p-3" id="dspendings">
           <h1>
             <b>Daily Tracker</b>
+            <br />
+            <b>{week} {day}</b>
           </h1>
         </div>
 

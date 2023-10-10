@@ -36,7 +36,9 @@ const dailyTrackingSchema = new mongoose.Schema({
     numericTrans: Number,
     numericLo: Number,
     numericOth: Number,
-    username: String
+    username: String,
+    day: String,
+    week: String
   });
   
   const weeklyBudgetSchema = new mongoose.Schema({
@@ -73,53 +75,31 @@ const WeeklyBudget = mongoose2.model('WeeklyBudget', weeklyBudgetSchema);
 app.listen(port, (req,res) => console.log(`Server is running on port ${port}`));
 
 app.post("/register", (req, res) => {
-    console.log(req.body);
-    const { numericEnter, numericMed, numericGroc, numericTrans, numericLo, numericOth, username } = req.body;
-    
-    DailyTracking.findOne({ username })
-      .then((existingUser) => {
-        if (existingUser) {
-          existingUser.numericEnter += numericEnter;
-          existingUser.numericMed += numericMed;
-          existingUser.numericGroc += numericGroc;
-          existingUser.numericTrans += numericTrans;
-          existingUser.numericLo += numericLo;
-          existingUser.numericOth += numericOth;
-  
-          existingUser
-            .save()
-            .then(() => {
-              res.status(200).json({ message: "User Daily Tracking updated successfully" });
-            })
-            .catch((err) => {
-              console.log("Error updating user data", err);
-              res.status(500).json({ message: "Error updating user data", error: err });
-            });
-        } else {
-          
-          const newUser = new DailyTracking({
-            numericEnter,
-            numericMed,
-            numericGroc,
-            numericTrans,
-            numericLo,
-            numericOth,
-            username
-          });
-  
-          newUser
-            .save()
-            .then(() => {
-              res.status(200).json({ message: "User Daily Tracking registered successfully" });
-            })
-            .catch((err) => {
-              console.log("Error creating a new user", err);
-              res.status(500).json({ message: "Error creating a new user", error: err });
-            });
-        }
-      })
-  
+  console.log(req.body);
+  const { numericEnter, numericMed, numericGroc, numericTrans, numericLo, numericOth, username, day, week } = req.body;
+
+  const newUser = new DailyTracking({
+      numericEnter,
+      numericMed,
+      numericGroc,
+      numericTrans,
+      numericLo,
+      numericOth,
+      username,
+      day, 
+      week
   });
+
+  newUser
+      .save()
+      .then(() => {
+          res.status(200).json({ message: "User Daily Tracking registered successfully" });
+      })
+      .catch((err) => {
+          console.log("Error creating a new user", err);
+          res.status(500).json({ message: "Error creating a new user", error: err });
+      });
+});
   
 app.post("/submit", (req, res) => {
 console.log(req.body);
