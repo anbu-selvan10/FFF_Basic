@@ -21,13 +21,22 @@ function DTracker(){
   const [trans, setTrans] = useState(0);
   const [lo, setLo] = useState(0);
   const [oth, setOth] = useState(0);
-  const [dayNo, setDayNo] = useState(1);
-  const [weekNo, setWeekNo] = useState(1);
-  const [count, setCount] = useState(0);
+  const [dayNo, setDayNo] = useState(() => {
+    const storedDayNo = localStorage.getItem('dayNo');
+    return storedDayNo !== null ? parseInt(storedDayNo) : 1;
+  });
+
+  const [weekNo, setWeekNo] = useState(() => {
+    const storedWeekNo = localStorage.getItem('weekNo');
+    return storedWeekNo !== null ? parseInt(storedWeekNo) : 1;
+  });
+
+  const [count, setCount] = useState(() => {
+    const storedCount = localStorage.getItem('count');
+    return storedCount !== null ? parseInt(storedCount) : 0;
+  });
 
   const username = "Anbu";
-  const day = `Day ${dayNo}`;
-  const week = `Week ${weekNo}`;
 
   const numericEnter = parseInt(enter);
   const numericMed = parseInt(med);
@@ -36,29 +45,52 @@ function DTracker(){
   const numericLo = parseInt(lo);
   const numericOth = parseInt(oth);
 
+  useEffect(() => {
+    localStorage.setItem('dayNo', dayNo);
+    localStorage.setItem('weekNo', weekNo);
+    localStorage.setItem('count', count);
+  }, [dayNo, weekNo, count]);
+
   const send = () => {
-    axios.post('http://localhost:4000/register', { numericEnter, numericMed, numericGroc, numericTrans, numericLo, numericOth, username, day, week })
+    
+    setRmCoins(prevRmCoins => prevRmCoins + 1);
+    localStorage.setItem('coins', rmCoins+1);
+    setCount(prev => prev+1);
+    localStorage.setItem('count', count);
+    // console.log(count);
+    if (count >= 6) {
+      setWeekNo(prevWeekNo => prevWeekNo+1);
+      setDayNo(1);
+      setCount(0);
+      localStorage.setItem('count', count);
+    } else{
+      setDayNo(prevDayNo => prevDayNo + 1);
+    }
+
+    localStorage.setItem('dayNo', dayNo);
+    localStorage.setItem('weekNo', weekNo);
+    console.log(count, dayNo, weekNo);
+
+    axios.post('http://localhost:4000/register', { numericEnter, numericMed, numericGroc, numericTrans, numericLo, numericOth, username, dayNo, weekNo })
         .then(response => {
             console.log(response.data);
         })
         .catch(error => {
             console.error("Registration error:", error);
         });
-    setRmCoins(prevRmCoins => prevRmCoins + 1);
-    localStorage.setItem('coins', rmCoins+1);
-    setCount(prevCount => prevCount + 1);
-    if (count >= 6) {
-      setWeekNo(prevWeekNo => prevWeekNo+1);
-      setDayNo(1);
-      setCount(0);
-    } else{
-      setDayNo(prevDayNo => prevDayNo + 1);
-    }
 
+        
     alert("Congratulations! You have earned a RM Coin");
 };
 
   const coins = localStorage.getItem('coins');
+  const day = `Day ${dayNo}`;
+  const week = `Week ${weekNo}`;
+
+  // localStorage.removeItem('coins');
+  // localStorage.removeItem('dayNo');
+  // localStorage.removeItem('weekNo');
+  // localStorage.removeItem('count');
 
   const onB = () => {
     navigate("/budget");
@@ -71,7 +103,6 @@ function DTracker(){
   const onH = () => {
     navigate("/");
   }
-
 
     return(
 
@@ -211,7 +242,7 @@ function DTracker(){
         </div>
       </div>
       <br />
-                <br />
+     <br />
                 
 
 

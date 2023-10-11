@@ -21,9 +21,9 @@ with open('F:/FFF/FFF/intents.json', 'r') as file:
 app = Flask(__name__)
 CORS(app)
 
-words = pickle.load(open('F:/FFF/word.pkl', 'rb'))
-classes = pickle.load(open('F:/FFF/classes.pkl', 'rb'))
-model = load_model('F:/FFF/chatbotmodel.keras')
+words = pickle.load(open('F:/FFF/FFF/word.pkl', 'rb'))
+classes = pickle.load(open('F:/FFF/FFF/classes.pkl', 'rb'))
+model = load_model('F:/FFF/FFF/chatbotmodel.keras')
 
 def cleanup(sentence):
     sentence_words = nltk.word_tokenize(sentence)

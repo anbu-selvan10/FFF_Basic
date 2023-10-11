@@ -76,7 +76,10 @@ app.listen(port, (req,res) => console.log(`Server is running on port ${port}`));
 
 app.post("/register", (req, res) => {
   console.log(req.body);
-  const { numericEnter, numericMed, numericGroc, numericTrans, numericLo, numericOth, username, day, week } = req.body;
+  const { numericEnter, numericMed, numericGroc, numericTrans, numericLo, numericOth, username, dayNo, weekNo } = req.body;
+
+  const day = `Day ${dayNo}`;
+  const week = `Week ${weekNo}`;
 
   const newUser = new DailyTracking({
       numericEnter,
@@ -86,8 +89,8 @@ app.post("/register", (req, res) => {
       numericLo,
       numericOth,
       username,
-      day, 
-      week
+      day: day, 
+      week: week
   });
 
   newUser
@@ -120,31 +123,13 @@ newUser
     });
 });
 
-app.get('/get-values', async (req, res) => {
+app.post('/get-values', async (req, res) => {
   try {
-    const values = await WeeklyBudget.find();
+    const week = req.body.week; 
+
+    const values = await DailyTracking.find({ week }); 
     res.json({ values });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
-
-// app.post('/rmbot', async (req, res) => {
-//   const userMessage = req.bot;
-
-//   try {
-//     const response = await openai.post('/', {
-//       prompt: userMessage,
-//       max_tokens: 10
-//     });
-
-//     const botMessage = response.data.choices[0].text.trim();
-//     res.json({ message: botMessage });
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// });
-
-
-
-

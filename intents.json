@@ -1,30 +1,66 @@
 {
-    "intents": [
-      {
-        "tag": "greetings",
-        "patterns": ["hello", "hey", "hi"],
-        "responses": ["Hello! How can I assist you with your financial questions?", "Hi there! What would you like to know about finance?"]
-      },
-      {
-        "tag": "investment_advice",
-        "patterns": ["What should I invest in?", "Can you suggest an investment?", "Investment advice"],
-        "responses": ["I can offer investment recommendations. To get started, could you please tell me about your financial goals and risk tolerance?", "Investing wisely is crucial. To provide personalized advice, I need to know more about your financial objectives and risk preferences."]
-      },
-      {
-        "tag": "budgeting_tips",
-        "patterns": ["How can I budget my finances?", "Give me budgeting tips", "Budgeting advice"],
-        "responses": ["Budgeting is a great way to manage your money. I can provide tips and guidance. What specific budgeting information are you looking for?", "Budgeting can help you achieve your financial goals. To assist you better, could you specify your budgeting needs?"]
-      },
-      {
-        "tag": "savings_strategies",
-        "patterns": ["What are some savings strategies?", "How can I save more money?", "Savings tips"],
-        "responses": ["Saving money is important. I can suggest strategies to boost your savings. Are you interested in general savings tips or something specific?", "Savings can secure your financial future. To provide relevant advice, could you please clarify your savings goals?"]
-      },
-      {
-        "tag": "financial_goals",
-        "patterns": ["How can I set financial goals?", "How can I be financially stable?", "Give me tips on setting financial goals", "Financial goal advice"],
-        "responses": ["Setting financial goals is a smart move. I can provide guidance. Are you looking for tips on setting short-term or long-term financial goals?", "Having clear financial goals is essential. To offer the best advice, could you specify the type of financial goals you want to set?"]
-      }
-    ]
-  }
+  "intents": [
+    {
+      "tag": "greetings",
+      "patterns": ["hello", "hey", "hi"],
+      "responses": ["Hello! How can I assist you with your financial questions?", "Hi there! What would you like to know about finance?"]
+    },
+    {
+      "tag": "investment_advice",
+      "patterns": ["What should I invest in?", "Can you suggest an investment?", "Investment advice"],
+      "responses": ["I can offer investment recommendations. To get started, could you please tell me about your financial goals and risk tolerance?", "Investing wisely is crucial. To provide personalized advice, I need to know more about your financial objectives and risk preferences."]
+    },
+    {
+      "tag": "budgeting_tips",
+      "patterns": ["How can I budget my finances?", "Give me budgeting tips", "Budgeting advice"],
+      "responses": ["Budgeting is a great way to manage your money. I can provide tips and guidance. What specific budgeting information are you looking for?", "Budgeting can help you achieve your financial goals. To assist you better, could you specify your budgeting needs?"]
+    },
+    {
+      "tag": "savings_strategies",
+      "patterns": ["What are some savings strategies?", "How can I save more money?", "Savings tips"],
+      "responses": ["Saving money is important. I can suggest strategies to boost your savings. Are you interested in general savings tips or something specific?", "Savings can secure your financial future. To provide relevant advice, could you please clarify your savings goals?"]
+    },
+    {
+      "tag": "financial_goals",
+      "patterns": ["How can I set financial goals?", "How can I be financially stable?", "Give me tips on setting financial goals", "Financial goal advice"],
+      "responses": ["Setting financial goals is a smart move. I can provide guidance. Are you looking for tips on setting short-term or long-term financial goals?", "Having clear financial goals is essential. To offer the best advice, could you specify the type of financial goals you want to set?"]
+    },
+    {
+      "tag":"about_app",
+      "patterns":["How does this app work?","What is FFF (about FFF)?","Tell me about this app"],
+      "responses":["This Full-Fledged Financial AI Assistant (FFF) app works by getting your daily expenses and analyzing it with your budgeting plans.It provides you reports and alerts based on your spendings.Do you want to know its complete functioning?","Simple ! Get your budgeting done,once your 1 week plan is done go to the daily spendings page and record your daily spendings . After 7 days you can view your report inside the spending analysis page with detailed analysis."]
+    },  
+    {
+      "tag":"define",
+      "patterns":["What is finance?","What is budgeting?","what is investment?"],
+      "responses":["Finance encompasses overall management of money and assets. Budgeting is creating a financial plan to allocate resources effectively. Investment is allocating funds into assets for potential growth or returns. Any other queries?","In easy terms: Investment is like a machine, Budgeting is like a blueprint,Finance is like being a mechanic."]
+    },
+    {
+      "tag":"RM Bot",
+      "patterns":["What is RM Bot (tell me about yourself) ?","How does this bot work","What can you do?"],
+      "responses":["I can provide you assistance regarding the features of this app and how to effectively make use of it. Do you want something more specific?","My responses can be useful in clearing your doubts regarding investment plans and savings plans and i can clear all your doubts regarding the working of this app."]
+    },
+    {
+      "tag":"investment_plans",
+      "patterns":["How do i plan my investments?","When to invest?","Investment ideas?"],
+      "responses":["In terms of this App, After getting your spending analysis report , analyze and look for alerts and other losses.If there are no alerts and no losses go on with your investment ideas with the remaining amount that you have.Any other suggestions?","It's important to have a solid financial foundation before investing.You are suggested to invest only if you have a good report in our spending analysis page after tracking your expenses daily."]
+    },
+    {
+      "tag":"features",
+      "patterns":["list out the features of this app?","What are the features of this app (tell me about the features)?","Give some advantages of this app?"],
+      "responses":["Main features of FFF App: Daily expense tracking , Budgeting , Spending analysis , RM Bot Assistance , RM coins to purchase in e-commerce store.","This app mainly focuses on giving a detailed report of your daily spendings and budgeting plans.Earn RM coins to purchase in e-commerce store and Iam here to clear your queries."]
+    },
+    {
+      "tag":"doubts",
+      "patterns":["How does this app help in managing our finance?","How do you categorize budgeting?","How are daily spendings or expenses tracked?"],
+      "responses":["We initially get to know your plans in the budgeting page, and then we categorize based on commonly spent areas (for ex: medical,education,food).Once you are done tracking for 7 days, you can visualize charts and trend graphs that can help you in knowing where you are lagging.","Upon entering your budgeting details, we outline your financial goals. Following this, we categorize expenditures into common areas like medical, education, and food. After tracking for a week, you can view insightful charts and trend graphs, shedding light on areas that may need attention."]
+    },
+    {
+       "tag":"whyqns",
+       "patterns":["Why should we use this app?","Why not other applications (Why FFF)?","what makes FFF (this app) unique?"],
+       "responses":["The thing that makes FFF unique is,users are benefited by the RM(revenue manager) coins that they earn that gives them an engaging experience.Earn RM coins to purchase products in our e-commerce store!","What sets FFF apart is the RM (revenue manager) coin system, enhancing user engagement by providing tangible benefits. Accumulate RM coins which can be used to buy various products from our e-commerce store, ensuring a rewarding and enjoyable experience for our users."]
+    }
+   
+  ]
+}
   

@@ -51,8 +51,6 @@ function Budget(){
     const [rent, setMort] = useState(0);
     const [ot8, setOt8] = useState(0);
 
-    const week = "Week 1";
-
     const numericearn = parseInt(earn);
     const numericmov = parseInt(mov);
     const numericstr = parseInt(str);
@@ -78,21 +76,6 @@ function Budget(){
     const numericegw = parseInt(egw);
     const numericrent = parseInt(rent);
     const numericot8 = parseInt(ot8);
-    
-    const ok = () => {
-      if(numericearn == numericot8+numericrent+numericegw+numericot7+numericret+numericinv+numericot6+numericbook+numericfee+numericot5+numericveh+numericfue+numericot4+numericpcp+numericcl+numericot3+numericins+numericbill+numericot2+numericgro+numericrest+numericot1+numericstr+numericmov){
-      axios.post('http://localhost:4000/submit', { week, numericearn, numericmov, numericstr, numericot1, numericrest, numericgro, numericot2, numericbill, numericins, numericot3, numericcl, numericpcp, numericot4, numericfue, numericveh, numericot5, numericfee, numericbook, numericot6, numericinv, numericret, numericot7, numericegw, numericrent, numericot8 })
-          .then(response => {
-              console.log(response.data);
-          })
-          .catch(error => {
-              console.error(error);
-    });
-      }else{
-        alert("All your earnings should be budgeted");
-      }
-};
-
 
     const onH = () => {
       navigate("/");
@@ -113,9 +96,28 @@ function Budget(){
 
     const coins = localStorage.getItem('coins');
 
+    const weekNo = localStorage.getItem('weekNo') == null ? 1 : localStorage.getItem('weekNo');
+
+    const week = `Week ${weekNo}`;
+
+    const ok = () => {
+      if(numericearn == numericot8+numericrent+numericegw+numericot7+numericret+numericinv+numericot6+numericbook+numericfee+numericot5+numericveh+numericfue+numericot4+numericpcp+numericcl+numericot3+numericins+numericbill+numericot2+numericgro+numericrest+numericot1+numericstr+numericmov){
+    
+        axios.post('http://localhost:4000/submit', { week, numericearn, numericmov, numericstr, numericot1, numericrest, numericgro, numericot2, numericbill, numericins, numericot3, numericcl, numericpcp, numericot4, numericfue, numericveh, numericot5, numericfee, numericbook, numericot6, numericinv, numericret, numericot7, numericegw, numericrent, numericot8 })
+          .then(response => {
+              console.log(response.data);
+          })
+          .catch(error => {
+              console.error(error);
+    });
+      }else{
+        alert("All your earnings should be budgeted");
+      }
+};
+
+
     return(
 
-    
         <div className='budget'>
         <nav className="navbar navbar-expand-lg">
         <img className="logo" src={logofff} id="budglogo" />
@@ -145,7 +147,7 @@ function Budget(){
       <br />
 
       <div className="budgettitle">
-        <h2><b>Weekly Budgeting</b></h2>
+        <h2><b>Weekly Budgeting: Week {weekNo}</b></h2>
       </div>
       <br/>
       <div className="container-fluid">
