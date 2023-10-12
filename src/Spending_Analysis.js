@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import logospend from './img/logofff2.jpg'
 import PieChart from './Piechart';
 import Linechart from './Linechart';
+import PairBarChart from './Bar';
 
 const GraphComponent = () => {
   const week = "Week 1";
@@ -97,9 +98,6 @@ const [numericEdu7, setNumericEdu7] = useState(0);
 const [numericSave7, setNumericSave7] = useState(0);
 const [numericHouse7, setNumericHouse7] = useState(0);
 
-
-
-
   const gett = () => {axios.post('http://localhost:4000/get-values', { week })
         .then(response => {
             console.log(response.data.values);
@@ -111,6 +109,60 @@ const [numericHouse7, setNumericHouse7] = useState(0);
             setNumericEdu1(response.data.values[0].numericEdu);
             setNumericSave1(response.data.values[0].numericSave);
             setNumericHouse1(response.data.values[0].numericHouse);
+
+            setNumericEnter2(response.data.values[1].numericEnter);
+            setNumericMed2(response.data.values[1].numericMed);
+            setNumericFood2(response.data.values[1].numericFood);
+            setNumericClothes2(response.data.values[1].numericClothes);
+            setNumericTrans2(response.data.values[1].numericTrans);
+            setNumericEdu2(response.data.values[1].numericEdu);
+            setNumericSave2(response.data.values[1].numericSave);
+            setNumericHouse2(response.data.values[1].numericHouse);
+
+            setNumericEnter3(response.data.values[2].numericEnter);
+            setNumericMed3(response.data.values[2].numericMed);
+            setNumericFood3(response.data.values[2].numericFood);
+            setNumericClothes3(response.data.values[2].numericClothes);
+            setNumericTrans3(response.data.values[2].numericTrans);
+            setNumericEdu3(response.data.values[2].numericEdu);
+            setNumericSave3(response.data.values[2].numericSave);
+            setNumericHouse3(response.data.values[2].numericHouse);
+
+            setNumericEnter4(response.data.values[3].numericEnter);
+            setNumericMed4(response.data.values[3].numericMed);
+            setNumericFood4(response.data.values[3].numericFood);
+            setNumericClothes4(response.data.values[3].numericClothes);
+            setNumericTrans4(response.data.values[3].numericTrans);
+            setNumericEdu4(response.data.values[3].numericEdu);
+            setNumericSave4(response.data.values[3].numericSave);
+            setNumericHouse4(response.data.values[3].numericHouse);
+
+            setNumericEnter5(response.data.values[4].numericEnter);
+            setNumericMed5(response.data.values[4].numericMed);
+            setNumericFood5(response.data.values[4].numericFood);
+            setNumericClothes5(response.data.values[4].numericClothes);
+            setNumericTrans5(response.data.values[4].numericTrans);
+            setNumericEdu5(response.data.values[4].numericEdu);
+            setNumericSave5(response.data.values[4].numericSave);
+            setNumericHouse5(response.data.values[4].numericHouse);
+
+            setNumericEnter6(response.data.values[5].numericEnter);
+            setNumericMed6(response.data.values[5].numericMed);
+            setNumericFood6(response.data.values[5].numericFood);
+            setNumericClothes6(response.data.values[5].numericClothes);
+            setNumericTrans6(response.data.values[5].numericTrans);
+            setNumericEdu6(response.data.values[5].numericEdu);
+            setNumericSave6(response.data.values[5].numericSave);
+            setNumericHouse6(response.data.values[5].numericHouse);
+
+            setNumericEnter7(response.data.values[6].numericEnter);
+            setNumericMed7(response.data.values[6].numericMed);
+            setNumericFood7(response.data.values[6].numericFood);
+            setNumericClothes7(response.data.values[6].numericClothes);
+            setNumericTrans7(response.data.values[6].numericTrans);
+            setNumericEdu7(response.data.values[6].numericEdu);
+            setNumericSave7(response.data.values[6].numericSave);
+            setNumericHouse7(response.data.values[6].numericHouse);
         })
         .catch(error => {
             console.error("Registration error:", error);
@@ -143,12 +195,12 @@ const [numericHouse7, setNumericHouse7] = useState(0);
       setNumericEgw(response.data.values[0].numericegw);
       setNumericRent(response.data.values[0].numericrent);
       setNumericOt8(response.data.values[0].numericot8);
-
   })
   .catch(error => {
       console.error("Registration error:", error);
   });
 }
+
 
   const enter = numericmov+numericstr+numericot1;
   const food = numericrest+numericgro+numericot2;
@@ -158,6 +210,25 @@ const [numericHouse7, setNumericHouse7] = useState(0);
   const edu = numericfee+numericbook+numericot6;
   const savings = numericinv+numericret+numericot7;
   const house = numericrent+numericegw+numericot8;
+
+  const dailyEnter = numericEnter1 + numericEnter2 + numericEnter3 + numericEnter4 + numericEnter5 + numericEnter6 + numericEnter7;
+  const dailyMed = numericMed1 + numericMed2 + numericMed3 + numericMed4 + numericMed5 + numericMed6 + numericMed7;
+  const dailyFood = numericFood1 + numericFood2 + numericFood3 + numericFood4 + numericFood5 + numericFood6 + numericFood7;  ;
+  const dailyClothes = numericClothes1 + numericClothes2 + numericClothes3 + numericClothes4 + numericClothes5 + numericClothes6 + numericClothes7;;
+  const dailyTrans = numericTrans1 + numericTrans2 + numericTrans3 + numericTrans4 + numericTrans5 + numericTrans6 + numericTrans7;
+  const dailyEdu = numericEdu1 + numericEdu2 + numericEdu3 + numericEdu4 + numericEdu5 + numericEdu6 + numericEdu7;
+  const dailySave = numericSave1 + numericSave2 + numericSave3 + numericSave4 + numericSave5 + numericSave6 + numericSave7;
+  const dailyHouse = numericHouse1 + numericHouse2 + numericHouse3 + numericHouse4 + numericHouse5 + numericHouse6 + numericHouse7;
+
+  const day1 = numericEnter1 + numericMed1 + numericFood1 + numericClothes1 + numericTrans1 + numericEdu1 + numericSave1 + numericHouse1;
+  const day2 = numericEnter2 + numericMed2 + numericFood2 + numericClothes2 + numericTrans2 + numericEdu2 + numericSave2 + numericHouse2;
+  const day3 = numericEnter3 + numericMed3 + numericFood3 + numericClothes3 + numericTrans3 + numericEdu3 + numericSave3 + numericHouse3;
+  const day4 = numericEnter4 + numericMed4 + numericFood4 + numericClothes4 + numericTrans4 + numericEdu4 + numericSave4 + numericHouse4;
+  const day5 = numericEnter5 + numericMed5 + numericFood5 + numericClothes5 + numericTrans5 + numericEdu5 + numericSave5 + numericHouse5;
+  const day6 = numericEnter6 + numericMed6 + numericFood6 + numericClothes6 + numericTrans6 + numericEdu6 + numericSave6 + numericHouse6;
+  const day7 = numericEnter7 + numericMed7 + numericFood7 + numericClothes7 + numericTrans7 + numericEdu7 + numericSave7 + numericHouse7;
+
+  console.log(day1, day2, day3, day4, day5, day6, day7);
 
   const data = [enter, food, med, clothes, travel, edu, savings, house];
   const labels = ['Entertainment', 'Food', 'Medical', 'Clothes', 'Transportation', 'Education', 'Savings', 'Household'];
@@ -172,13 +243,20 @@ const [numericHouse7, setNumericHouse7] = useState(0);
     'rgb(87, 255, 255)',
   ];
 
+  const dailyData = [day1, day2, day3, day4, day5, day6, day7];
+  const dailyLabels = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"];
+
+  const bar = [dailyEnter, dailyFood, dailyMed, dailyClothes, dailyTrans, dailyEdu, dailySave, dailyHouse];
+
+  const forBar = [data, bar];
 
   return(
     <div>
       <button onClick={gett}>Click Nigga daily</button>
       <button onClick={gett1}>Click Nigga week</button>
       <PieChart data={data} labels={labels} backgroundColor={backgroundColor} />
-      <Linechart />
+      <Linechart data={dailyData} labels={dailyLabels}/>
+      <PairBarChart data={forBar}/>
     </div>
   );
 };

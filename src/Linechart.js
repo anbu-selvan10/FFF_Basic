@@ -11,6 +11,7 @@ const Linechart = (props) => {
       chartInstance.current.destroy();
     }
     
+    if(chartRef.current){
     const myChartRef = chartRef.current.getContext('2d');
     chartInstance.current = new Chart(myChartRef, {
       type: "line",
@@ -27,13 +28,14 @@ const Linechart = (props) => {
         ]
       }
     });
+  }
 
     return () => {
       if (chartInstance.current) {
         chartInstance.current.destroy();
       }
     };
-  }, []);
+  }, [chartRef, props.labels, props.data]);
 
   return (
     <div className="canvas2-container2">

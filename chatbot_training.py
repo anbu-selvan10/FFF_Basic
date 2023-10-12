@@ -16,7 +16,7 @@ from nltk.stem import WordNetLemmatizer
 
 lemmatizer = WordNetLemmatizer()
 
-with open('D:/FFF_Final/FFF/intents.json', 'r') as file:
+with open('F:/FFF/FFF/intents.json', 'r') as file:
     intents = json.load(file)
 
 words = []
