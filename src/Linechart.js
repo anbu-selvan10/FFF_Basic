@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Chart from 'chart.js/auto';
 import './styles/chartline.css';
 
-const Linechart = () => {
+const Linechart = (props) => {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
@@ -15,11 +15,11 @@ const Linechart = () => {
     chartInstance.current = new Chart(myChartRef, {
       type: "line",
       data: {
-        labels: ["January", "February", "March", "April"],
+        labels: props.labels,
         datasets: [
           {
             label: "Line Chart",
-            data: [30, 40, 20, 10, 35],
+            data: props.data,
             fill: false,
             borderColor: 'rgb(75, 192, 192)',
             borderWidth: 2

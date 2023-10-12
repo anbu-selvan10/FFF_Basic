@@ -9,6 +9,13 @@
   width:80%;
 }
 
+.botrespcard {
+  background-color: inherit; /* Inherit the background color of the parent */
+  border: 1px solid #000000; /* Border for the card */
+  padding: 20px; /* Padding to create some space around the content */
+  border-radius: 10px; /* Rounded corners for the card */
+}
+
 
 
 #rmbot2{

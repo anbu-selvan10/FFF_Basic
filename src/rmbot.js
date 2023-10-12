@@ -79,11 +79,21 @@ function RMBot(){
                     Ask
                   </button>
                 
-                <p>{bot}</p>
+
+                
                
               
               </div>
+              
             </div>
+            <br/>
+            <br/>
+            <br/>
+        <div className="botrespcard">
+          <div className="responsetab">
+            <p>{bot}</p>
+          </div>
+          </div>
           </div>
         </div>
       </div>

@@ -15,15 +15,15 @@ from flask_cors import CORS
 
 lemmatizer = WordNetLemmatizer()
 
-with open('F:/FFF/FFF/intents.json', 'r') as file:
+with open('D:/FFF_Final/FFF/intents.json', 'r') as file:
     intents = json.load(file)
 
 app = Flask(__name__)
 CORS(app)
 
-words = pickle.load(open('F:/FFF/FFF/word.pkl', 'rb'))
-classes = pickle.load(open('F:/FFF/FFF/classes.pkl', 'rb'))
-model = load_model('F:/FFF/FFF/chatbotmodel.keras')
+words = pickle.load(open('D:/FFF_Final/word.pkl', 'rb'))
+classes = pickle.load(open('D:/FFF_Final/classes.pkl', 'rb'))
+model = load_model('D:/FFF_Final/chatbotmodel.keras')
 
 def cleanup(sentence):
     sentence_words = nltk.word_tokenize(sentence)

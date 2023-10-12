@@ -30,14 +30,16 @@ const mongoose2 = mongoose.createConnection(mongoURI2, {
 });
 
 const dailyTrackingSchema = new mongoose.Schema({
-    numericEnter: Number,
-    numericMed: Number,
-    numericGroc: Number,
-    numericTrans: Number,
-    numericLo: Number,
-    numericOth: Number,
-    username: String,
-    day: String,
+    numericEnter: Number, 
+    numericMed: Number, 
+    numericFood: Number, 
+    numericClothes: Number, 
+    numericTrans: Number, 
+    numericEdu: Number, 
+    numericSave: Number, 
+    numericHouse: Number, 
+    username: String, 
+    day: String, 
     week: String
   });
   
@@ -76,21 +78,23 @@ app.listen(port, (req,res) => console.log(`Server is running on port ${port}`));
 
 app.post("/register", (req, res) => {
   console.log(req.body);
-  const { numericEnter, numericMed, numericGroc, numericTrans, numericLo, numericOth, username, dayNo, weekNo } = req.body;
+  const { numericEnter, numericMed, numericFood, numericClothes, numericTrans, numericEdu, numericSave, numericHouse, username, dayNo, weekNo } = req.body;
 
   const day = `Day ${dayNo}`;
   const week = `Week ${weekNo}`;
 
   const newUser = new DailyTracking({
-      numericEnter,
-      numericMed,
-      numericGroc,
-      numericTrans,
-      numericLo,
-      numericOth,
-      username,
-      day: day, 
-      week: week
+    numericEnter, 
+    numericMed, 
+    numericFood, 
+    numericClothes, 
+    numericTrans, 
+    numericEdu, 
+    numericSave, 
+    numericHouse, 
+    username, 
+    day: day, 
+    week: week
   });
 
   newUser
@@ -128,6 +132,17 @@ app.post('/get-values', async (req, res) => {
     const week = req.body.week; 
 
     const values = await DailyTracking.find({ week }); 
+    res.json({ values });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/get-values-week', async (req, res) => {
+  try {
+    const week = req.body.week; 
+
+    const values = await WeeklyBudget.find({ week }); 
     res.json({ values });
   } catch (error) {
     res.status(500).json({ error: error.message });

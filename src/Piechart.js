@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import './styles/chart.css';
 
-const PieChart = () => {
+const PieChart = (props) => {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
@@ -10,22 +10,13 @@ const PieChart = () => {
     if (chartRef.current) {
       const myChartRef = chartRef.current.getContext('2d');
       chartInstance.current = new Chart(myChartRef, {
-        type: "pie",
+        type: 'pie',
         data: {
-          labels: ["Entertainment", "Food", "Medical","Clothes","Transportation","Education","Savings","Household"],
+          labels: props.labels,
           datasets: [
             {
-              data: [300, 100, 200,30,400,65,600,120],
-              backgroundColor: [
-                'rgb(255, 87, 145)',
-                'rgb(255, 255, 87)', // Yellow
-                'rgb(145, 87, 255)',
-                'rgb(255, 145, 87)',
-                'rgb(87, 145, 255)',
-                'rgb(145, 255, 87)',
-                'rgb(255, 87, 255)',
-                'rgb(87, 255, 255)'
-              ],
+              data: props.data,
+              backgroundColor: props.backgroundColor,
             },
           ],
         },
@@ -37,7 +28,7 @@ const PieChart = () => {
         chartInstance.current.destroy();
       }
     };
-  }, [chartRef]);
+  }, [chartRef, props.labels, props.data, props.backgroundColor]);
 
   return (
     <div className="canvas-container">
@@ -47,4 +38,3 @@ const PieChart = () => {
 };
 
 export default PieChart;
-

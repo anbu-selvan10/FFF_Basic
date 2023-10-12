@@ -17,10 +17,13 @@ function DTracker(){
 
   const [enter, setEnter] = useState(0);
   const [med, setMed] = useState(0);
-  const [groc, setGroc] = useState(0);
+  const [food, setFood] = useState(0);
+  const [clothes, setClothes] = useState(0);
   const [trans, setTrans] = useState(0);
-  const [lo, setLo] = useState(0);
-  const [oth, setOth] = useState(0);
+  const [edu, setEdu] = useState(0);
+  const [save, setSave] = useState(0);
+  const [house,setHouse] = useState(0);
+
   const [dayNo, setDayNo] = useState(() => {
     const storedDayNo = localStorage.getItem('dayNo');
     return storedDayNo !== null ? parseInt(storedDayNo) : 1;
@@ -40,10 +43,12 @@ function DTracker(){
 
   const numericEnter = parseInt(enter);
   const numericMed = parseInt(med);
-  const numericGroc = parseInt(groc);
+  const numericFood = parseInt(food);
+  const numericClothes = parseInt(clothes);
   const numericTrans = parseInt(trans);
-  const numericLo = parseInt(lo);
-  const numericOth = parseInt(oth);
+  const numericEdu = parseInt(edu);
+  const numericSave = parseInt(save);
+  const numericHouse  = parseInt(house);
 
   useEffect(() => {
     localStorage.setItem('dayNo', dayNo);
@@ -71,7 +76,7 @@ function DTracker(){
     localStorage.setItem('weekNo', weekNo);
     console.log(count, dayNo, weekNo);
 
-    axios.post('http://localhost:4000/register', { numericEnter, numericMed, numericGroc, numericTrans, numericLo, numericOth, username, dayNo, weekNo })
+    axios.post('http://localhost:4000/register', { numericEnter, numericMed, numericFood, numericClothes, numericTrans, numericEdu, numericSave, numericHouse, username, dayNo, weekNo })
         .then(response => {
             console.log(response.data);
         })
@@ -187,19 +192,19 @@ function DTracker(){
               <div className="fade-in-once mb-3">
                 <label>
                 
-                  <h5 id="household">Groceries & Household</h5>
+                  <h5 id="food">Food expenses</h5>
                 </label>
               </div>
-              <input type="numeric" onChange={(e) => setGroc(e.target.value)} id="household" className="form-control mb-3" />
+              <input type="numeric" onChange={(e) => setFood(e.target.value)} id="food" className="form-control mb-3" />
 
               <div className="fade-in-once mb-3">
                 <label> 
                 <br />
                 <br />
-                  <h5 id="transportation">Transportation</h5>
+                  <h5 id="clothing">Clothing</h5>
                 </label>
               </div>
-              <input type="numeric" onChange={(e) => setTrans(e.target.value)} id="transportation" className="form-control mb-3" />
+              <input type="numeric" onChange={(e) => setClothes(e.target.value)} id="clothing" className="form-control mb-3" />
             </form>
           </div>
         </div>
@@ -212,10 +217,10 @@ function DTracker(){
             <form id="register" method="post" className="text-center">
               <div className="fade-in-once mb-3">
                 <label>
-                  <h5 id="loan">Loan</h5>
+                  <h5 id="transportation">Transportation Expenses</h5>
                 </label>
               </div>
-              <input type="numeric" onChange={(e) => setLo(e.target.value)} id="loan" className="form-control mb-3" />
+              <input type="numeric" onChange={(e) => setTrans(e.target.value)} id="transportation" className="form-control mb-3" />
             </form>
           </div>
 
@@ -223,10 +228,34 @@ function DTracker(){
             <form id="register" method="post" className="text-center">
               <div className="fade-in-once mb-3">
                 <label>
-                  <h5 id="others">Others</h5>
+                  <h5 id="education">Education</h5>
                 </label>
               </div>
-              <input type="numeric" onChange={(e) => setOth(e.target.value)} id="others" className="form-control mb-3" />
+              <input type="numeric" onChange={(e) => setEdu(e.target.value)} id="education" className="form-control mb-3" />
+            </form>
+          </div>
+        </div>
+
+        <div className="row justify-content-center mt-2">
+          <div className="col-lg-4 col-md-6">
+            <form id="register" method="post" className="text-center">
+              <div className="fade-in-once mb-3">
+                <label>
+                  <h5 id="savings">Savings</h5>
+                </label>
+              </div>
+              <input type="numeric" onChange={(e) => setSave(e.target.value)} id="savings" className="form-control mb-3" />
+            </form>
+          </div>
+
+          <div className="col-lg-4 col-md-6">
+            <form id="register" method="post" className="text-center">
+              <div className="fade-in-once mb-3">
+                <label>
+                  <h5 id="household">Household</h5>
+                </label>
+              </div>
+              <input type="numeric" onChange={(e) => setHouse(e.target.value)} id="household" className="form-control mb-3" />
             </form>
           </div>
         </div>
