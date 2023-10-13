@@ -173,7 +173,7 @@ function DTracker(){
               <div className="fade-in-once mb-3">
                 <label>
                 <br />
-                <br />
+               
                   <h5 id="medical">Medical Expenses</h5>
                   
                 </label>
@@ -200,7 +200,7 @@ function DTracker(){
               <div className="fade-in-once mb-3">
                 <label> 
                 <br />
-                <br />
+             
                   <h5 id="clothing">Clothing</h5>
                 </label>
               </div>

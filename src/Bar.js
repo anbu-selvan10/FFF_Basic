@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
+import './styles/bar.css';
 
 const PairBarChart = (props) => {
   const chartRef = useRef(null);
@@ -75,7 +76,7 @@ const PairBarChart = (props) => {
   }, [chartRef, props.data]);
 
   return (
-    <div>
+    <div className="canvas4">
       <canvas ref={chartRef} />
     </div>
   );
