@@ -21,6 +21,7 @@
 #rmbot2{
   width: 20%;
 }
+
 .navbar-nav .nav-link::before {
   content: '';
   position: absolute;

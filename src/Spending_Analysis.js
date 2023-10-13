@@ -6,6 +6,7 @@ import logospend from './img/logofff2.jpg'
 import PieChart from './Piechart';
 import Linechart from './Linechart';
 import PairBarChart from './Bar';
+import PairedBarGraph from './Barchart';
 
 const GraphComponent = () => {
   const week = "Week 1";
@@ -201,6 +202,16 @@ const [numericHouse7, setNumericHouse7] = useState(0);
   });
 }
 
+function sumArray(arr) {
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  
+  return sum;
+}
+
 
   const enter = numericmov+numericstr+numericot1;
   const food = numericrest+numericgro+numericot2;
@@ -257,6 +268,8 @@ const [numericHouse7, setNumericHouse7] = useState(0);
       <PieChart data={data} labels={labels} backgroundColor={backgroundColor} />
       <Linechart data={dailyData} labels={dailyLabels}/>
       <PairBarChart data={forBar}/>
+      <PairedBarGraph data={forBar}/>
+      <p></p>
     </div>
   );
 };

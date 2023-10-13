@@ -37,5 +37,21 @@ function App() {
 
 export default App;
 
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import Barchart from './Barchart.js';
+
+// function App() {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path='/' element={<Barchart />} />
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   );
+// }
+
+// export default App;
 
 
