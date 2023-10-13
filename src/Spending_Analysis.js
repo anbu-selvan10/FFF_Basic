@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './styles/spendinganal.css';
 import axios from 'axios';
-import { useEffect } from 'react';
-import logospend from './img/logofff2.jpg'
 import PieChart from './Piechart';
 import Linechart from './Linechart';
 import PairBarChart from './Bar';
@@ -206,12 +204,20 @@ function sumArray(arr) {
   if (arr.length === 0) {
     return 0;
   }
-
-  const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-  
+  let sum = 0;
+  for(let i=0; i<arr.length; i++){
+    sum += arr[i];
+  }
   return sum;
 }
 
+function abs(val){
+  if(val < 0){
+    return -val;
+  }else{
+    return val;
+  }
+}
 
   const enter = numericmov+numericstr+numericot1;
   const food = numericrest+numericgro+numericot2;
@@ -239,8 +245,6 @@ function sumArray(arr) {
   const day6 = numericEnter6 + numericMed6 + numericFood6 + numericClothes6 + numericTrans6 + numericEdu6 + numericSave6 + numericHouse6;
   const day7 = numericEnter7 + numericMed7 + numericFood7 + numericClothes7 + numericTrans7 + numericEdu7 + numericSave7 + numericHouse7;
 
-  console.log(day1, day2, day3, day4, day5, day6, day7);
-
   const data = [enter, food, med, clothes, travel, edu, savings, house];
   const labels = ['Entertainment', 'Food', 'Medical', 'Clothes', 'Transportation', 'Education', 'Savings', 'Household'];
   const backgroundColor = [
@@ -261,6 +265,8 @@ function sumArray(arr) {
 
   const forBar = [data, bar];
 
+  console.log(sumArray(bar), sumArray(data));
+
   return(
     <div>
       <button onClick={gett}>Click Nigga daily</button>
@@ -269,7 +275,51 @@ function sumArray(arr) {
       <Linechart data={dailyData} labels={dailyLabels}/>
       <PairBarChart data={forBar}/>
       <PairedBarGraph data={forBar}/>
-      <p></p>
+      {(sumArray(data)-sumArray(bar)<0) ? (
+        <div><p>Sorry! You have lose amount {abs(sumArray(data)-sumArray(bar))}</p></div>
+      ) : (
+        <div><p>Congratulations! You have saved amount {abs(sumArray(data)-sumArray(bar))}</p></div>
+      )}    
+      {(data[0]-bar[0]<0) ? (
+        <div><p>Entertainment: You have lose amount {abs(data[0]-bar[0])}</p></div>
+      ) : (
+        <div><p>Entertainment: You have saved amount {abs(data[0]-bar[0])}</p></div>
+      )}
+      {(data[1]-bar[1]<0) ? (
+        <div><p>Food: You have lose amount {abs(data[1]-bar[1])}</p></div>
+      ) : (
+        <div><p>Food: You have saved amount {abs(data[1]-bar[1])}</p></div>
+      )}
+      {(data[2]-bar[2]<0) ? (
+        <div><p>Medical: You have lose amount {abs(data[2]-bar[2])}</p></div>
+      ) : (
+        <div><p>Medical: You have saved amount {abs(data[2]-bar[2])}</p></div>
+      )}
+      {(data[3]-bar[3]<0) ? (
+        <div><p>Clothing: You have lose amount {abs(data[3]-bar[3])}</p></div>
+      ) : (
+        <div><p>Clothing: You have saved amount {abs(data[3]-bar[3])}</p></div>
+      )}
+      {(data[4]-bar[4]<0) ? (
+        <div><p>Transportation: You have lose amount {abs(data[4]-bar[4])}</p></div>
+      ) : (
+        <div><p>Transportation: You have saved amount {abs(data[4]-bar[4])}</p></div>
+      )}
+      {(data[5]-bar[5]<0) ? (
+        <div><p>Education: You have lose amount {abs(data[5]-bar[5])}</p></div>
+      ) : (
+        <div><p>Education: You have saved amount {abs(data[5]-bar[5])}</p></div>
+      )}
+      {(data[6]-bar[6]<0) ? (
+        <div><p>Savings & Investments: You have lose amount {abs(data[6]-bar[6])}</p></div>
+      ) : (
+        <div><p>Savings & Investments: You have saved amount {abs(data[6]-bar[6])}</p></div>
+      )}
+      {(data[7]-bar[7]<0) ? (
+        <div><p>Household & Groceries: You have lose amount {abs(data[7]-bar[7])}</p></div>
+      ) : (
+        <div><p>Household & Groceries: You have saved amount {abs(data[7]-bar[7])}</p></div>
+      )}
     </div>
   );
 };

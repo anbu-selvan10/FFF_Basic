@@ -16,7 +16,7 @@ from nltk.stem import WordNetLemmatizer
 
 lemmatizer = WordNetLemmatizer()
 
-with open('D:/FFF_Final/FFF/intents.json', 'r') as file:
+with open('F:/FFF/FFF/intents.json', 'r') as file:
     intents = json.load(file)
 
 words = []
@@ -36,8 +36,8 @@ words = [lemmatizer.lemmatize(word) for word in words if word not in ignore]
 words = sorted(set(words))
 classes = sorted(set(classes))
 
-pickle.dump(words, open('word.pkl', 'wb'))
-pickle.dump(classes, open('classes.pkl', 'wb'))
+pickle.dump(words, open('F:/FFF/FFF/word.pkl', 'wb'))
+pickle.dump(classes, open('F:/FFF/FFF/classes.pkl', 'wb'))
 
 training = []
 output_empty = [0]*len(classes)
@@ -70,5 +70,5 @@ sgd = SGD(learning_rate = 0.01, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-model.save("chatbotmodel.keras", hist)
+model.save("F:/FFF/FFF/chatbotmodel.keras", hist)
 print("Done")
