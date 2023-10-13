@@ -4,9 +4,12 @@ import axios from 'axios';
 import PieChart from './Piechart';
 import Linechart from './Linechart';
 import PairBarChart from './Bar';
+import { useNavigate } from 'react-router-dom';
 import PairedBarGraph from './Barchart';
+import logofff from './img/logofff2.jpg'
 
 const GraphComponent = () => {
+  let navigate = useNavigate();
   const week = "Week 1";
   
   const [numericmov, setNumericMov] = useState(0);
@@ -96,6 +99,22 @@ const [numericTrans7, setNumericTrans7] = useState(0);
 const [numericEdu7, setNumericEdu7] = useState(0);
 const [numericSave7, setNumericSave7] = useState(0);
 const [numericHouse7, setNumericHouse7] = useState(0);
+const onH = () => {
+  navigate("/");
+  
+}
+
+const onD = () => {
+  navigate("/dtracker");
+}
+
+const onR = () => {
+  navigate("/bot");
+}
+
+const onS = () => {
+  navigate("/spend");
+}
 
   const gett = () => {axios.post('http://localhost:4000/get-values', { week })
         .then(response => {
@@ -269,57 +288,160 @@ function abs(val){
 
   return(
     <div>
-      <button onClick={gett}>Click Nigga daily</button>
-      <button onClick={gett1}>Click Nigga week</button>
-      <PieChart data={data} labels={labels} backgroundColor={backgroundColor} />
-      <Linechart data={dailyData} labels={dailyLabels}/>
-      <PairBarChart data={forBar}/>
-      <PairedBarGraph data={forBar}/>
+       <nav className="navbar navbar-expand-lg">
+        <img className="logo" src={logofff} id="budglogo" />
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <a className="nav-link" onClick={onH} href="#"><b>Home</b></a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#"><b>Budgeting</b></a>
+            </li>
+            <li className="nav-item">
+              <a onClick={onS} className="nav-link" href="#"><b>Spending Analysis</b></a>
+            </li>
+            <li className="nav-item">
+              <a onClick={onD} className="nav-link" href="#"><b>Daily Tracker</b></a>
+            </li>
+            <li className="nav-item">
+              <a onClick={onR} className="nav-link" href="#"><b>RM Bot</b></a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#"><b>RM Coins:</b></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div className="buttonsspend">
+      <div className="row justify-content-center">
+          <div className="col-lg-8 col-md-12">
+            <div className="card spend-card budget-card-center">
+              <div className="card-body">
+              
+                <input type="string" id="dreport">
+                </input><br/> <button onClick={gett} id="spendbut">Generate Daily Report</button>
+                <br/><br/><br/>
+                <input type="string" id="wreport"></input><button onClick={gett1} id="spendbut">Generate Weekly Report</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      
+      <br/>
+        <h1 className="pietext"><b>Budgeted Categories</b></h1>
+        <br/>
+        <div className="piechart">
+          <br/>
+          <PieChart data={data} labels={labels} backgroundColor={backgroundColor} />
+        </div>
+
+      <br/>
+      <br/>
+      <br/>
+     
+      <br/>
+        <h1 className="dtrackrep"><b>Daily Tracker Report</b></h1>
+        <br/>
+        <div className="linechart">
+          <Linechart data={dailyData} labels={dailyLabels}/>
+      </div>
+
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+      
+      <br/>
+         <h1 className="analysis"><b>Analysis</b></h1>
+         <br/>
+         <div className="pairbar">
+        
+           <PairBarChart data={forBar}/>
+         </div>
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+      
+      <br/>
+        <h1 className="alertp"><b>Alert Analysis</b></h1>
+        <br/>
+        <div className="alerts">
+             <PairedBarGraph data={forBar}/>
+
+         
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+    <div className="alert">
       {(sumArray(data)-sumArray(bar)<0) ? (
-        <div><p>Sorry! You have lose amount {abs(sumArray(data)-sumArray(bar))}</p></div>
+        <div><p className="mline">Sorry! You have lost amount <b>{abs(sumArray(data)-sumArray(bar))} </b> !</p></div>
       ) : (
-        <div><p>Congratulations! You have saved amount {abs(sumArray(data)-sumArray(bar))}</p></div>
+        <div><p className="mline">Congratulations! You have saved amount <b>{abs(sumArray(data)-sumArray(bar)) } </b> !</p></div>
       )}    
-      {(data[0]-bar[0]<0) ? (
-        <div><p>Entertainment: You have lose amount {abs(data[0]-bar[0])}</p></div>
-      ) : (
-        <div><p>Entertainment: You have saved amount {abs(data[0]-bar[0])}</p></div>
-      )}
-      {(data[1]-bar[1]<0) ? (
-        <div><p>Food: You have lose amount {abs(data[1]-bar[1])}</p></div>
-      ) : (
-        <div><p>Food: You have saved amount {abs(data[1]-bar[1])}</p></div>
-      )}
-      {(data[2]-bar[2]<0) ? (
-        <div><p>Medical: You have lose amount {abs(data[2]-bar[2])}</p></div>
-      ) : (
-        <div><p>Medical: You have saved amount {abs(data[2]-bar[2])}</p></div>
-      )}
-      {(data[3]-bar[3]<0) ? (
-        <div><p>Clothing: You have lose amount {abs(data[3]-bar[3])}</p></div>
-      ) : (
-        <div><p>Clothing: You have saved amount {abs(data[3]-bar[3])}</p></div>
-      )}
-      {(data[4]-bar[4]<0) ? (
-        <div><p>Transportation: You have lose amount {abs(data[4]-bar[4])}</p></div>
-      ) : (
-        <div><p>Transportation: You have saved amount {abs(data[4]-bar[4])}</p></div>
-      )}
-      {(data[5]-bar[5]<0) ? (
-        <div><p>Education: You have lose amount {abs(data[5]-bar[5])}</p></div>
-      ) : (
-        <div><p>Education: You have saved amount {abs(data[5]-bar[5])}</p></div>
-      )}
-      {(data[6]-bar[6]<0) ? (
-        <div><p>Savings & Investments: You have lose amount {abs(data[6]-bar[6])}</p></div>
-      ) : (
-        <div><p>Savings & Investments: You have saved amount {abs(data[6]-bar[6])}</p></div>
-      )}
-      {(data[7]-bar[7]<0) ? (
-        <div><p>Household & Groceries: You have lose amount {abs(data[7]-bar[7])}</p></div>
-      ) : (
-        <div><p>Household & Groceries: You have saved amount {abs(data[7]-bar[7])}</p></div>
-      )}
+
+      <div className="subdivtext">
+          {(data[0]-bar[0]<0) ? (
+            <div><p>Entertainment: You have lose amount {abs(data[0]-bar[0])}</p></div>
+          ) : (
+            <div><p>Entertainment: You have saved amount {abs(data[0]-bar[0])}</p></div>
+          )}
+          {(data[1]-bar[1]<0) ? (
+            <div><p>Food: You have lose amount {abs(data[1]-bar[1])}</p></div>
+          ) : (
+            <div><p>Food: You have saved amount {abs(data[1]-bar[1])}</p></div>
+          )}
+          {(data[2]-bar[2]<0) ? (
+            <div><p>Medical: You have lose amount {abs(data[2]-bar[2])}</p></div>
+          ) : (
+            <div><p>Medical: You have saved amount {abs(data[2]-bar[2])}</p></div>
+          )}
+          {(data[3]-bar[3]<0) ? (
+            <div><p>Clothing: You have lose amount {abs(data[3]-bar[3])}</p></div>
+          ) : (
+            <div><p>Clothing: You have saved amount {abs(data[3]-bar[3])}</p></div>
+          )}
+          {(data[4]-bar[4]<0) ? (
+            <div><p>Transportation: You have lose amount {abs(data[4]-bar[4])}</p></div>
+          ) : (
+            <div><p>Transportation: You have saved amount {abs(data[4]-bar[4])}</p></div>
+          )}
+          {(data[5]-bar[5]<0) ? (
+            <div><p>Education: You have lose amount {abs(data[5]-bar[5])}</p></div>
+          ) : (
+            <div><p>Education: You have saved amount {abs(data[5]-bar[5])}</p></div>
+          )}
+          {(data[6]-bar[6]<0) ? (
+            <div><p>Savings & Investments: You have lose amount {abs(data[6]-bar[6])}</p></div>
+          ) : (
+            <div><p>Savings & Investments: You have saved amount {abs(data[6]-bar[6])}</p></div>
+          )}
+          {(data[7]-bar[7]<0) ? (
+            <div><p>Household & Groceries: You have lose amount {abs(data[7]-bar[7])}</p></div>
+          ) : (
+            <div><p>Household & Groceries: You have saved amount {abs(data[7]-bar[7])}</p></div>
+          )}
+       </div>
+
+      </div>
+    </div>
     </div>
   );
 };

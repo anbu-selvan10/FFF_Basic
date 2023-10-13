@@ -38,17 +38,18 @@ function App() {
 export default App;
 
 // import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import Barchart from './Barchart.js';
+// import Store from './Rmstore.js';
+
 
 // function App() {
 //   return (
-//     <div>
-//       <BrowserRouter>
-//         <Routes>
-//           <Route path='/' element={<Barchart />} />
-//         </Routes>
-//       </BrowserRouter>
-//     </div>
+//     <BrowserRouter>
+//     <Routes>
+//      <Route path='/' element={<Store/>} />
+//      </Routes>
+//     </BrowserRouter>
+    
+
 //   );
 // }
 
