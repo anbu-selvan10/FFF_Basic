@@ -101,6 +101,10 @@ function DTracker(){
     navigate("/budget");
   }
 
+  const onS = () => {
+    navigate("/spend");
+  }
+
   const onR = () => {
     navigate("/bot");
   }
@@ -123,7 +127,7 @@ function DTracker(){
             <a onClick={onB} className="nav-link" href="#"><b>Budgeting</b></a>
             </li>
             <li className="nav-item">
-            <a onClick={onB} className="nav-link" href="#"><b>Spending Analysis</b></a>
+            <a onClick={onS} className="nav-link" href="#"><b>Spending Analysis</b></a>
             </li>
             <li className="nav-item">
             <a className="nav-link" href="#"><b>Daily Tracker</b></a>

@@ -22,7 +22,7 @@ with open('F:/FFF/FFF/intents.json', 'r') as file:
 words = []
 classes = []
 documents = []
-ignore = ['?', '!', ',', '.','What','How','what','how','tell','Tell','does','Does','of this app','the']
+ignore = ['?', '!', ',', '.','What','How','what','how','tell','Tell','does','Does','app','the','does','do','can','I','we','they','he','she','it','will','not', 'other']
 
 for intent in intents["intents"]:
     for pattern in intent["patterns"]:

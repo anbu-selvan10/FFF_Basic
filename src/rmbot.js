@@ -4,14 +4,17 @@ import botlogofff from './img/logofff2.jpg';
 import { useState } from 'react';
 import axios from 'axios';
 import RmBot from './img/fffrmbot.png';
+import { useNavigate } from 'react-router-dom';
 
 function RMBot(){
+
+    let navigate = useNavigate();
 
     const [bot, setBot] = useState("");
     const [msg, setMsg] = useState("");
 
     const ok = () => {
-      axios.post('http://localhost:4000/chat', { message: msg }) 
+      axios.post('http://localhost:5000/chat', { message: msg }) 
         .then(response => {
           setBot(response.data.message); 
           console.log(response.data.message);
@@ -21,6 +24,25 @@ function RMBot(){
         });
     };
 
+    const onH = () => {
+      navigate("/");
+      
+    }
+
+    const onD = () => {
+      navigate("/dtracker");
+    }
+
+    const onB = () => {
+      navigate("/budget");
+    }
+
+    const onS = () => {
+      navigate("/spend");
+    }
+
+    const coins = localStorage.getItem('coins');
+
     return(
       <div className='rmbot2'>
       
@@ -29,22 +51,22 @@ function RMBot(){
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>Home</b></a>
+              <a onClick={onH} className="nav-link" href="#"><b>Home</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>Budgeting</b></a>
+              <a onClick={onB} className="nav-link" href="#"><b>Budgeting</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>Spending Analysis</b></a>
+              <a onClick={onS} className="nav-link" href="#"><b>Spending Analysis</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>Daily Tracker</b></a>
+              <a onClick={onD} className="nav-link" href="#"><b>Daily Tracker</b></a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#"><b>RM Bot</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>RM COINS:</b></a>
+              <a className="nav-link" href="#"><b>RM COINS:{coins}</b></a>
             </li>
           </ul>
         </div>

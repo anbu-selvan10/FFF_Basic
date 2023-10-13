@@ -159,7 +159,7 @@ function Budget(){
                   <label><h2 id="yourearnings"><b>Your Earnings</b></h2></label>
                   <input onChange={(e) => setEarn(e.target.value)} type="numeric" id="earnings" />
                 </div>
-                <p className="card-text fade-in-once"><i>Save your one week budgeting plan here and earn 5 RM coins for successfully saving the plan. Record your spendings in the daily tracker to earn 1RM coin per day and generate a weekly report after 7 successive days.</i></p>
+                <p className="card-text fade-in-once"><i>Save your one week budgeting plan here. Record your spendings in the daily tracker to earn 1RM coin per day and generate a weekly report after 7 successive days and if you save money at the end of the week then you will earn 5 RM coins.</i></p>
               </div>
             </div>
           </div>
