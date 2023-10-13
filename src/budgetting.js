@@ -94,6 +94,10 @@ function Budget(){
       navigate("/spend");
     }
 
+    const onRs = () => {
+      navigate("/rmstore")
+    }
+
     const coins = localStorage.getItem('coins');
 
     const weekNo = localStorage.getItem('weekNo') == null ? 1 : localStorage.getItem('weekNo');
@@ -110,6 +114,8 @@ function Budget(){
           .catch(error => {
               console.error(error);
     });
+
+        navigate("/dtracker");
       }else{
         alert("All your earnings should be budgeted");
       }
@@ -139,7 +145,10 @@ function Budget(){
               <a onClick={onR} className="nav-link" href="#"><b>RM Bot</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>RM Coins:{coins}</b></a>
+            <a onClick={onRs} className="nav-link" href="#"><b>RM Store</b></a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#"><b>RM Coins: {coins}</b></a>
             </li>
           </ul>
         </div>

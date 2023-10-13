@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/rmstore.css';
+import { useNavigate } from 'react-router-dom';
 
 import netflix from './img/Netflix-Symbol.png';
 import lens from './img/lens.png';
@@ -8,6 +9,31 @@ import headph from './img/hdphones.jpeg';
 import logofff from './img/logofff2.jpg'
 
 function RMstore(){
+    let navigate = useNavigate();
+
+    const onH = () => {
+      navigate("/");
+      
+    }
+
+    const onD = () => {
+      navigate("/dtracker");
+    }
+
+    const onB = () => {
+      navigate("/budget");
+    }
+
+    const onS = () => {
+      navigate("/spend");
+    }
+
+    const onR = () => {
+      navigate("/bot")
+    }
+
+    const coins = localStorage.getItem("coins");
+
     return(
     <div className="rmstore">
       <nav className="navbar navbar-expand-lg rmpnav">
@@ -15,22 +41,25 @@ function RMstore(){
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>Home</b></a>
+              <a onClick={onH} className="nav-link" href="#"><b>Home</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>Budgeting</b></a>
+              <a onClick={onB} className="nav-link" href="#"><b>Budgeting</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>Spending Analysis</b></a>
+              <a onClick={onS} className="nav-link" href="#"><b>Spending Analysis</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>Daily Tracker</b></a>
+              <a onClick={onD} className="nav-link" href="#"><b>Daily Tracker</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>RM Bot</b></a>
+              <a onClick={onR} className="nav-link" href="#"><b>RM Bot</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>RM COINS:</b></a>
+              <a className="nav-link" href="#"><b>RM Store</b></a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#"><b>RM Coins:{coins}</b></a>
             </li>
           </ul>
         </div>

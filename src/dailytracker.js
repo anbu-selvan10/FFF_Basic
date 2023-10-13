@@ -85,7 +85,7 @@ function DTracker(){
         });
 
         
-    alert("Congratulations! You have earned a RM Coin");
+    alert("Congratulations! You have earned a RM Coin. Go to Spending Analysis Page to get the daily alerts");
 };
 
   const coins = localStorage.getItem('coins');
@@ -113,6 +113,10 @@ function DTracker(){
     navigate("/");
   }
 
+  const onRs = () => {
+    navigate("/rmstore")
+  }
+
     return(
 
         <div className='dailyspd'>
@@ -134,6 +138,9 @@ function DTracker(){
             </li>
             <li className="nav-item">
             <a onClick={onR} className="nav-link" href="#"><b>RM Bot</b></a>
+            </li>
+            <li className="nav-item">
+            <a onClick={onRs} className="nav-link" href="#"><b>RM Store</b></a>
             </li>
             <li className="nav-item">
             <a className="nav-link" href="#"><b>RM Coins:{coins}</b></a>

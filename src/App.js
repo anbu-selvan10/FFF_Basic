@@ -6,7 +6,7 @@ import GraphComponent from './Spending_Analysis.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import Linechart from './Linechart'
 // import PieChart from './Piechart'
-
+import RMstore from './Rmstore.js';
 
 
 
@@ -22,6 +22,7 @@ function App() {
       <Route path='/dtracker' element={<DTracker />} />
       <Route path='/bot' element={<RMBot />} />
       <Route path='/spend' element={<GraphComponent />} />
+      <Route path='/rmstore' element={<RMstore />} />
       {/* <Route path='/' element={<PieChart />} />
       <Route path='/' element={<Linechart />} /> */}
 

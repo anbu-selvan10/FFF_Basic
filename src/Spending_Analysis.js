@@ -10,7 +10,6 @@ import logofff from './img/logofff2.jpg'
 
 const GraphComponent = () => {
   let navigate = useNavigate();
-  const week = "Week 1";
   
   const [numericmov, setNumericMov] = useState(0);
   const [numericstr, setNumericStr] = useState(0);
@@ -99,6 +98,8 @@ const [numericTrans7, setNumericTrans7] = useState(0);
 const [numericEdu7, setNumericEdu7] = useState(0);
 const [numericSave7, setNumericSave7] = useState(0);
 const [numericHouse7, setNumericHouse7] = useState(0);
+
+const [week, setWeek] = useState("");
 const onH = () => {
   navigate("/");
   
@@ -112,8 +113,12 @@ const onR = () => {
   navigate("/bot");
 }
 
-const onS = () => {
-  navigate("/spend");
+const onB = () => {
+  navigate("/budget");
+}
+
+const onRs = () => {
+  navigate("/rmstore")
 }
 
   const gett = () => {axios.post('http://localhost:4000/get-values', { week })
@@ -189,6 +194,7 @@ const onS = () => {
 
   const gett1 = () => {axios.post('http://localhost:4000/get-values-week', { week })
   .then(response => {
+      console.log(response.data.values);
       setNumericMov(response.data.values[0].numericmov);
       setNumericStr(response.data.values[0].numericstr);
       setNumericOt1(response.data.values[0].numericot1);
@@ -283,8 +289,14 @@ function abs(val){
   const bar = [dailyEnter, dailyFood, dailyMed, dailyClothes, dailyTrans, dailyEdu, dailySave, dailyHouse];
 
   const forBar = [data, bar];
+  
+  if(sumArray(data)-sumArray(bar)>0 && sumArray(data) != 0){
+    const a = localStorage.getItem('coins') == null ? 0 : localStorage.getItem('coins');
+    localStorage.setItem('coins', parseInt(a)+5);
+    alert("Congratulations!You have earned 5 RM coins because you saved");
+  }
 
-  console.log(sumArray(bar), sumArray(data));
+  const coins = localStorage.getItem('coins');
 
   return(
     <div>
@@ -296,10 +308,10 @@ function abs(val){
               <a className="nav-link" onClick={onH} href="#"><b>Home</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>Budgeting</b></a>
+              <a onClick={onB} className="nav-link" href="#"><b>Budgeting</b></a>
             </li>
             <li className="nav-item">
-              <a onClick={onS} className="nav-link" href="#"><b>Spending Analysis</b></a>
+              <a className="nav-link" href="#"><b>Spending Analysis</b></a>
             </li>
             <li className="nav-item">
               <a onClick={onD} className="nav-link" href="#"><b>Daily Tracker</b></a>
@@ -308,7 +320,10 @@ function abs(val){
               <a onClick={onR} className="nav-link" href="#"><b>RM Bot</b></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><b>RM Coins:</b></a>
+            <a onClick={onRs} className="nav-link" href="#"><b>RM Store</b></a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#"><b>RM Coins:{coins}</b></a>
             </li>
           </ul>
         </div>
@@ -323,10 +338,10 @@ function abs(val){
             <div className="card spend-card budget-card-center">
               <div className="card-body">
               
-                <input type="string" id="dreport">
+                <input onChange={(e) => setWeek(e.target.value)} type="text" id="dreport">
                 </input><br/> <button onClick={gett} id="spendbut">Generate Daily Report</button>
                 <br/><br/><br/>
-                <input type="string" id="wreport"></input><button onClick={gett1} id="spendbut">Generate Weekly Report</button>
+                <input onChange={(e) => setWeek(e.target.value)} type="text" id="wreport"></input><button onClick={gett1} id="spendbut">Generate Weekly Report</button>
               </div>
             </div>
           </div>
@@ -382,9 +397,6 @@ function abs(val){
         <br/>
         <div className="alerts">
              <PairedBarGraph data={forBar}/>
-
-         
-
       <br/>
       <br/>
       <br/>

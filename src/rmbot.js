@@ -41,6 +41,10 @@ function RMBot(){
       navigate("/spend");
     }
 
+    const onRs = () => {
+      navigate("/rmstore")
+    }
+
     const coins = localStorage.getItem('coins');
 
     return(
@@ -64,6 +68,9 @@ function RMBot(){
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#"><b>RM Bot</b></a>
+            </li>
+            <li className="nav-item">
+            <a onClick={onRs} className="nav-link" href="#"><b>RM Store</b></a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#"><b>RM COINS:{coins}</b></a>
